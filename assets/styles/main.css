@@ -6,24 +6,64 @@
 header {
     width: 100%;
     height: 561px;
-    border-top: 4px solid #19212e;
+    border-top: 5px solid #19212e;
     overflow: hidden;
     background-image: url('../images/asd.png');
     background-repeat: repeat-x;
 }
 
-#ee {
+header #headerWrap {
     width: 950px;
     height: 561px;
-    border-top: 1px solid #495260;
     float: left;
     background-image: url('../images/ww.png');
 }
 header #header-bg-lines-pattern {
     width: 100%;
     height: 561px;
+    border-top: 1px solid #495260;
     position: absolute;
-    top: 5px;
+    top: 4px;
     background-image: url('../images/header-bg-pattern-lines.png');
     background-repeat: repeat-x;
+}
+header #headerWrap #upperHeadWrap {
+    width: 100%;
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    background: red;
+}
+header #headerWrap #upperHeadWrap #logoWrap {
+    width: 233px;
+    justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
+}
+header #headerWrap #upperHeadWrap #logoWrap #logo {
+    width: 117px;
+    height: 45px;
+    background: yellow;
+}
+header #headerWrap #upperHeadWrap #logoWrap #slogan {
+    margin-left: 20px;
+}
+header #headerWrap #upperHeadWrap #navWrap {
+    margin-top: 3px;
+    justify-content: flex-end;
+}
+header #headerWrap #upperHeadWrap #navWrap ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+header #headerWrap #upperHeadWrap #navWrap ul li {
+}
+header #headerWrap #upperHeadWrap #navWrap ul li a {
+    display: block;
+    background: yellow;
+    text-decoration: none;
+    color: black;
+    padding: 15px 10px;
 }
