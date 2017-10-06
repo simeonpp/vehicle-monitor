@@ -1,22 +1,40 @@
+@font-face {
+    font-family: droidSans;
+    src: url('../fonts/DroidSans.ttf');
+}
+@font-face {
+    font-family: goudyBookletter;
+    src: url('../fonts/goudy_bookletter.otf');
+}
+
+body {
+    background-image: url('../images/bg-pattern.png');
+    background-repeat: repeat;
+}
+
 .wrapper {
     width: 950px;
     margin: 0 auto;
+    font-family: droidSans;
+    font-size: 14px;
 }
 
 header {
     width: 100%;
     height: 561px;
     border-top: 5px solid #19212e;
-    overflow: hidden;
     background-image: url('../images/asd.png');
     background-repeat: repeat-x;
+    position: relative;
+    border-bottom: 1px solid #ffffff;
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.4);
 }
 
 header #headerWrap {
     width: 950px;
     height: 561px;
-    float: left;
     background-image: url('../images/ww.png');
+    position: relative;
 }
 header #header-bg-lines-pattern {
     width: 100%;
@@ -29,33 +47,36 @@ header #header-bg-lines-pattern {
 }
 header #headerWrap #upperHeadWrap {
     width: 100%;
-    margin-top: 35px;
+    padding-top: 35px;
     display: flex;
     justify-content: space-between;
-    background: red;
 }
 header #headerWrap #upperHeadWrap #logoWrap {
-    width: 233px;
-    justify-content: flex-start;
+    width: 253px;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
-header #headerWrap #upperHeadWrap #logoWrap #logo {
-    width: 117px;
-    height: 45px;
-    background: yellow;
+header #headerWrap #upperHeadWrap #logoWrap #logo img {
+    width: 100%;
+    height: 54px;
 }
 header #headerWrap #upperHeadWrap #logoWrap #slogan {
     margin-left: 20px;
+    color: #77808d;
+    font-style: italic;
 }
 header #headerWrap #upperHeadWrap #navWrap {
-    margin-top: 3px;
+    margin-top: 2px;
     justify-content: flex-end;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
-    background: greenyellow;
+    background-image: url('../images/nav-bg-pattern.png');
+    background-repeat: repeat-x;
     padding: 0 8px;
+    border: 1px solid #111b27;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 header #headerWrap #upperHeadWrap #navWrap ul {
     margin: 0;
@@ -69,12 +90,98 @@ header #headerWrap #upperHeadWrap #navWrap ul li a {
     display: block;
     text-decoration: none;
     color: black;
-    padding: 15px 10px;
+    padding: 19px 15px;
+    transition: background 0.2s;
 }
 header #headerWrap #upperHeadWrap #navWrap ul li a:hover {
-    background: rgba(0, 0, 0, 0.5)
+    background: rgba(1, 1, 1, 0.1)
 }
-header #headerWrap #upperHeadWrap #navWrap ul li:first-child a {
+
+header #sliderWrap {
+    width: 100%;
+    margin-top: 130px;
+    display: flex;
+    align-items: center;
 }
-header #headerWrap #upperHeadWrap #navWrap ul li:last-child a {
+header #sliderWrap .arrow {
+}
+header #sliderWrap .arrow.left {
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+header #sliderWrap .arrow:hover {
+    cursor: pointer;
+}
+header #sliderWrap .arrow img {
+    width: 100%;
+}
+header #sliderWrap #sliderContent {
+    flex: 1;
+    height: 100%;
+    padding: 0 50px;
+    text-align: center;
+}
+header #sliderWrap #sliderContent h2 {
+    color: white;
+    font-family: goudyBookletter;
+    font-size: 38px;
+    text-transform: capitalize;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+}
+header #sliderWrap #sliderContent h3 {
+    font-size: 20px;
+    color: #778292;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+    font-family: Georgia;
+    margin-top: 12px;
+    font-style: italic;
+}
+
+header #mainDrawing {
+    width: 950px;
+    height: 216px;
+    background-image: url('../images/header-main-drawing.png');
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+}
+header #mainDrawingBg {
+    width: 100%;
+    height: 108px;
+    background-image: url('../images/header-main-drawing-bg-pattern.png');
+    background-repeat: repeat-x;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+header #mainDrawingMoon {
+    width: 163px;
+    height: 156px;
+    background-image: url('../images/header-main-drawing-moon.png');
+    position: absolute;
+    bottom: 17px;
+    right: 100px;
+    z-index: 1;
+}
+header #checkVehicleStatusBigButton {
+    position: absolute;
+    bottom: -22px;
+    left: 350px;
+    z-index: 4;
+    background-image: url("../images/big-button-bg-pattern.png");
+    background-repeat: repeat-x;
+    color: white;
+    font-family: goudyBookletter;
+    font-size: 26px;
+    border: 1px solid #317179;
+    padding: 13px 22px;
+    text-transform: capitalize;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+header #checkVehicleStatusBigButton:hover {
+    cursor: pointer;
 }
