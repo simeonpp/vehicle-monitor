@@ -51,6 +51,11 @@ header #headerWrap #upperHeadWrap #logoWrap #slogan {
 header #headerWrap #upperHeadWrap #navWrap {
     margin-top: 3px;
     justify-content: flex-end;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background: greenyellow;
+    padding: 0 8px;
 }
 header #headerWrap #upperHeadWrap #navWrap ul {
     margin: 0;
@@ -62,8 +67,14 @@ header #headerWrap #upperHeadWrap #navWrap ul li {
 }
 header #headerWrap #upperHeadWrap #navWrap ul li a {
     display: block;
-    background: yellow;
     text-decoration: none;
     color: black;
     padding: 15px 10px;
+}
+header #headerWrap #upperHeadWrap #navWrap ul li a:hover {
+    background: rgba(0, 0, 0, 0.5)
+}
+header #headerWrap #upperHeadWrap #navWrap ul li:first-child a {
+}
+header #headerWrap #upperHeadWrap #navWrap ul li:last-child a {
 }
