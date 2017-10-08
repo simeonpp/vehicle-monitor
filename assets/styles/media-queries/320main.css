@@ -1,0 +1,159 @@
+@media only screen and (max-width: 320px) {
+    /** Common **/
+    .wrapper {
+        width: 96%;
+    }
+    .mobile {
+        display: block;
+    }
+    /** End Common **/
+
+    /** Login **/
+    #loginOuterWrap {
+        display: block;
+        height: auto;
+        margin-top: 15px;
+    }
+    #loginOuterWrap #loginWrap {
+        width: 96%;
+        height: auto;
+        display: block;
+    }
+    #loginOuterWrap #loginWrap #loginLeftSection {
+        display: none;
+    }
+    #loginOuterWrap #loginWrap #loginRightSection {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+    /** End Login **/
+
+    /** Header **/
+    header {
+        height: auto;
+        background: -webkit-linear-gradient(left, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);
+        background: -o-linear-gradient(left, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);
+        background: -ms-linear-gradient(left, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);
+        background: -moz-linear-gradient(left, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);
+        background: linear-gradient(to right, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);        
+    }
+    header #headerWrap {
+        width: 100%;
+        height: auto;
+        background: none;
+    }
+    header #headerWrap #upperHeadWrap {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    header #headerWrap #upperHeadWrap #logoWrap  {
+        width: auto;
+        flex: 1;
+    }
+    header #headerWrap #upperHeadWrap #logoWrap #logo img {
+        height: auto;
+    }
+    header #headerWrap #upperHeadWrap #logoWrap #slogan {
+        margin-left: 10px;
+    }
+    header #headerWrap #upperHeadWrap #mobileNavButtonWrap {
+        display: inline;
+    }
+    header #headerWrap #upperHeadWrap #navWrap {
+        display: none;
+    }
+    header #sliderWrap {
+        display: none;
+    }
+    header #mainDrawing {
+        display: none;
+    }
+    header #mainDrawingBg  {
+        display: none;
+    }
+    header #mainDrawingMoon {
+        display: none;
+    }
+    header #checkVehicleStatusBigButton {
+        position: static;
+        padding: 8px;
+        font-size: 18px;
+        bottom: 0;
+        left: 0;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    /** End Header **/
+
+    /** Homepage Content **/
+    section#companyInfo { 
+        margin-top: 35px;
+        display: block;
+    }
+    section#companyInfo article {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    section#companyInfo article h4 {
+        text-align: center;
+        margin-bottom: 15px;
+        text-decoration: underline;
+    }
+
+    section#suppliesWrap {
+        height: auto;
+        margin: 15px 0 40px;
+    }
+    section#suppliesWrap .suppliesWrapDrawing {
+        display: none;
+    }
+    section#suppliesWrap ul#suppliesList {
+        display: block;
+    }
+    section#suppliesWrap ul#suppliesList li {
+        width: 80%;
+        margin: 0 auto 20px;
+    }
+    section#suppliesWrap ul#suppliesList li:last-child {
+        margin-bottom: 0;
+    }
+    section#suppliesWrap ul#suppliesList li img {
+        height: auto;
+    }
+
+    section#vehiclesAddWrap #arrowDrawing {
+        display: none;
+    }
+    section#vehiclesAddWrap .button {
+        display: block;
+        margin-top: 20px;
+    }
+    /** End Homepage Content **/
+
+    /** Footer **/
+    footer #footerOuterWrap {
+        padding: 25px 0;
+    }
+    footer #footerWrap {
+        display: block;
+    }
+    footer #footerWrap article {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    footer #footerWrap article:last-child {
+        margin-bottom: 0;
+    }
+    footer ul.footerList {
+        margin-top: 10px;
+    }
+
+    footer #footerOuterNavWrap #footerNavigation {
+        display: none;
+    }
+    footer #footerOuterNavWrap #creatorInfoWrap {
+        text-align: center;
+        line-height: 18px;
+    }
+    /** End Footer **/
+}
