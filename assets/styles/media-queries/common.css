@@ -1,0 +1,27 @@
+@media only screen and (max-width: 768px) {
+    /** Common **/
+    .wrapper {
+        width: 96%;
+    }
+    /** End Common **/
+    
+    /** Login **/
+    #loginOuterWrap {
+        display: block;
+        height: auto;
+        margin-top: 15px;
+    }
+    #loginOuterWrap #loginWrap {
+        width: 96%;
+        height: auto;
+        display: block;
+    }
+    #loginOuterWrap #loginWrap #loginLeftSection {
+        display: none;
+    }
+    #loginOuterWrap #loginWrap #loginRightSection {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+    /** End Login **/
+}

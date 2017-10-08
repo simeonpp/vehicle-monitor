@@ -1,21 +1,38 @@
 @media only screen and (max-width: 480px) and (min-width: 320px) {
-     /** Login **/
-     #loginOuterWrap {
-        display: block;
-        height: auto;
-        margin-top: 15px;
+     /** Header **/
+     header #checkVehicleStatusBigButton {
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
     }
-    #loginOuterWrap #loginWrap {
-        width: 96%;
-        height: auto;
+     /** End Header **/
+
+     /** Homepage Content **/
+    section#suppliesWrap ul#suppliesList {
         display: block;
+        overflow: hidden;
     }
-    #loginOuterWrap #loginWrap #loginLeftSection {
+    section#suppliesWrap ul#suppliesList li {
+        width: 47% !important;
+        float: left;
+    }
+    section#suppliesWrap ul#suppliesList li:nth-child(2n) {
+        margin-left: 6%;
+    }
+    section#suppliesWrap ul#suppliesList li:nth-last-child(-n+3) {
+        margin-bottom: 0;
+    }
+    section#suppliesWrap ul#suppliesList li:last-child {
         display: none;
     }
-    #loginOuterWrap #loginWrap #loginRightSection {
-        width: 100%;
-        padding-bottom: 40px;
+     /** End Homepage Content **/
+
+     /** Footer **/
+     footer #footerWrap article:not(:first-child) {
+         text-align: center;
+     }
+     footer ul.footerList {
+        margin-top: 15px !important;
     }
-    /** End Login **/
+     /** End Footer **/
 }

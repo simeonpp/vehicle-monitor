@@ -462,6 +462,9 @@ section#suppliesWrap ul#suppliesList {
 section#suppliesWrap ul#suppliesList li {
     width: 16%;
     border: 1px solid #b7b7b7;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 section#suppliesWrap ul#suppliesList li img {
     width: 100%;
