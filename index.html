@@ -139,12 +139,12 @@
                     <article>
                         <h6>Recent maintenances</h6>
                         <ul class="footerList">
-                            <li><a href="#">Alex Devil - 29 Sep 2017</a></li>
-                            <li><a href="#">Alex Devil - 21 Sep 2017</a></li>
-                            <li><a href="#">Test Service - 30 Oct 2017</a></li>
-                            <li><a href="#">Alex Devil - 29 Sep 2017</a></li>
-                            <li><a href="#">Test Service - 29 Sep 2017</a></li>
-                            <li><a href="#">Alex Devil - 29 Sep 2017</a></li>
+                            <li><a href="#">Alex Devil - March 14, 2010</a></li>
+                            <li><a href="#">Alex Devil - March 14, 2010</a></li>
+                            <li><a href="#">Test Service - March 14, 2010</a></li>
+                            <li><a href="#">Alex Devil - March 14, 2010</a></li>
+                            <li><a href="#">Test Service - March 14, 2010</a></li>
+                            <li><a href="#">Alex Devil - March 14, 2010</a></li>
                         </ul>
                     </article>
     
@@ -211,6 +211,15 @@
         var changeSlide = function(slideIndex) {
             sliderMainText.innerText = sliderMainTexts[slideIndex];
             sliderSecondaryText.innerText = sliderSecondaryTexts[slideIndex];
+
+            sliderLeftArrow.style.display = 'block';
+            sliderRightArrow.style.display = 'block';
+            if (slideIndex === 0) {
+                sliderLeftArrow.style.display = 'none';
+            }
+            if (slideIndex === maxSliderIndex - 1) {
+                sliderRightArrow.style.display = 'none';
+            }
         }        
         sliderLeftArrow.addEventListener('click', function() {
             if (currentSliderIndex - 1 >= 0) {
@@ -224,6 +233,8 @@
                 changeSlide(currentSliderIndex);
             }
         });
+
+        changeSlide(0);
     </script>
 
 </body>
