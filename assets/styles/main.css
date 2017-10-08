@@ -67,6 +67,10 @@ h6 {
     background: linear-gradient(to bottom, #ffffff 0%,#ededed 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
     
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
     -webkit-border-radius: 11px;
     -moz-border-radius: 11px;
     border-radius: 11px;
@@ -510,6 +514,26 @@ section#breadcrumbsWrap ul li a {
     flex: 1;
     margin-right: 40px;
 }
+#mainContent section#content #filtersWrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+#mainContent section#content #filtersWrap #filters {
+    justify-content: flex-start;
+}
+#mainContent section#content #filtersWrap #filters select {
+    min-width: 200px;
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+#mainContent section#content #filtersWrap #addNewButtonWrap {
+    justify-content: flex-end;
+}
 #mainContent section#content article {
     margin-bottom: 25px;
 }
@@ -554,14 +578,14 @@ section#breadcrumbsWrap ul li a {
 #mainContent section#content article#vehicleDetails ul li {
     margin-top: 10px;
 }
-#mainContent section#content article#vehicleMaintenancesWrap {
+#mainContent section#content article.extraInfoWrap {
     margin: 50px 0 100px;
 }
-#mainContent section#content article#vehicleMaintenancesWrap h4 {
+#mainContent section#content article.extraInfoWrap h4 {
     margin: 30px 0;
     font-size: 32px;
 }
-#mainContent section#content article#vehicleMaintenancesWrap ul li {
+#mainContent section#content article.extraInfoWrap ul li {
     width: 100%;
     background: white;
     border: 1px solid #d1d0d0;
@@ -576,26 +600,29 @@ section#breadcrumbsWrap ul li a {
     -moz-border-radius: 11px;
     border-radius: 11px;
 }
-#mainContent section#content article#vehicleMaintenancesWrap ul li .title {
+#mainContent section#content article.extraInfoWrap ul li .title {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     font-family: goudyBookletter;
     margin-bottom: 10px;
 }
-#mainContent section#content article#vehicleMaintenancesWrap ul li .title .service {
+#mainContent section#content article.extraInfoWrap ul li .title .mainInfo {
     color: #565656;
     font-size: 22px;
     margin-right: 8px;
 }
-#mainContent section#content article#vehicleMaintenancesWrap ul li .title .date {
+#mainContent section#content article.extraInfoWrap ul li .title .secondaryInfo {
     font-size: 18px;
     color: #b6b5b5;
 }
-#mainContent section#content article#vehicleMaintenancesWrap ul li .additionalinfo {
+#mainContent section#content article.extraInfoWrap ul li .additionalinfo {
     margin-bottom: 3px;
 }
-#mainContent section#content article#vehicleMaintenancesWrap ul li p.description {
+#mainContent section#content article.extraInfoWrap ul li .tableAdditionalInfo table {
+    width: 100%;
+}
+#mainContent section#content article.extraInfoWrap ul li p.description {
     margin-top: 10px;
     line-height: 20px;
 }
@@ -662,6 +689,31 @@ section#breadcrumbsWrap ul li a {
 }
 #mainContent #paginationWrap #paginationButtonsWrap ul li a:hover {
     color: #c2c2c2;
+}
+
+.tableAdditionalInfo table {
+}
+.tableAdditionalInfo table thead th {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 33%;
+}
+.tableAdditionalInfo table thead th:nth-child(1) {
+    background: #60cb71;
+}
+.tableAdditionalInfo table thead th:nth-child(2) {
+    background: #5f5dac;
+}
+.tableAdditionalInfo table thead th:nth-child(3) {
+    background: #1f81d3;
+}
+.tableAdditionalInfo table th,
+.tableAdditionalInfo table td {
+    padding: 10px 5px;
+}
+.tableAdditionalInfo table tbody tr:nth-child(2n) {
+    background: #f7f7f7;
 }
 
 footer #footerOuterWrap {

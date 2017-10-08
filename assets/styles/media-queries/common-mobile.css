@@ -6,6 +6,11 @@
     .mobile {
         display: block;
     }
+    .button {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
     /** End Common **/
 
     /** Header **/
@@ -82,6 +87,29 @@
     /** End Homepage Content **/
 
     /** List & Detailed Content **/
+    #mainContent section#content #filtersWrap {
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid #cccccc;
+        padding-bottom: 20px;
+        margin-bottom: 35px;
+    }
+    #mainContent section#content #filtersWrap #filters {
+        display: block;
+    }
+    #mainContent section#content #filtersWrap #filters select {
+        min-width: 150px;
+        margin-left: 10px;
+        padding: 7px 10px;
+    }
+    #mainContent section#content #filtersWrap #addNewButtonWrap {
+        display: block;
+        margin-top: 15px;
+    }
+
+
+
+
     #mainContent section#content article {
         margin-bottom: 55px;
     }
@@ -93,6 +121,10 @@
     }
     #mainContent section#content article .infoWrap .textWrap {
         margin-top: 15px;
+    }
+    #mainContent section#content article .infoWrap .textWrap .tableAdditionalInfo table {
+        width: 100%;
+        margin-top: 30px;
     }
     #mainContent section#content article .infoWrap .textWrap .buttonWrap .button {
         display: block;
