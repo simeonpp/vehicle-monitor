@@ -219,21 +219,12 @@ header #headerTopLine {
 
 header #headerWrap {
     width: 950px;
-    height: 561px; /* 561px full */
+    height: 560px; /* 561px full */
     background-image: url('../images/ww.png');
     position: relative;
 }
 .smallHeaderHeight {
     height: 275px !important;
-}
-header #header-bg-lines-pattern {
-    width: 100%;
-    height: 561px;
-    border-top: 1px solid #495260;
-    position: absolute;
-    top: 4px;
-    background-image: url('../images/header-bg-pattern-lines.png');
-    background-repeat: repeat-x;
 }
 header #headerWrap #upperHeadWrap {
     width: 100%;
@@ -285,8 +276,6 @@ header #headerWrap #upperHeadWrap #navWrap ul {
     padding: 0;
     display: flex;
     justify-content: flex-end;
-}
-header #headerWrap #upperHeadWrap #navWrap ul li {
 }
 header #headerWrap #upperHeadWrap #navWrap ul li a {
     display: block;
@@ -414,11 +403,10 @@ section#companyInfo article .imageWrap img {
 }
 
 section#suppliesWrap {
-    width: 100%;
-    height: 114px;;
+    width: 96%;
+    height: 114px;
+    margin: 80px auto 50px;
     padding: 15px;
-    margin-top: 80px;
-    margin-bottom: 50px;
     border: 1px solid #b7b7b7;
     position: relative;
 

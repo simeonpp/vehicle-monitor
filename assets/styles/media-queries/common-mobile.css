@@ -1,4 +1,4 @@
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 680px) {
     /** Common **/
     .wrapper {
         width: 94% !important;
@@ -79,36 +79,35 @@
         margin-bottom: 15px;
         text-decoration: underline;
     }
-
-    section#suppliesWrap {
-        height: auto;
-        margin: 15px 0 40px;
-    }
-    section#suppliesWrap .suppliesWrapDrawing {
-        display: none;
-    }
-    section#suppliesWrap ul#suppliesList {
-        display: block;
-    }
-    section#suppliesWrap ul#suppliesList li {
-        width: 80%;
-        margin: 0 auto 20px;
-    }
-    section#suppliesWrap ul#suppliesList li:last-child {
-        margin-bottom: 0;
-    }
-    section#suppliesWrap ul#suppliesList li img {
-        height: auto;
-    }
-
-    section#vehiclesAddWrap #arrowDrawing {
-        display: none;
-    }
-    section#vehiclesAddWrap .button {
-        display: block;
-        margin-top: 20px;
-    }
     /** End Homepage Content **/
+
+    /** List & Detailed Content **/
+    #mainContent section#content article {
+        margin-bottom: 55px;
+    }
+    #mainContent section#content article .infoWrap .imageWrap {
+        width: 100%;
+        margin-right: 0;
+        float: none;
+        border: 1px solid #ebeaea;
+    }
+    #mainContent section#content article .infoWrap .textWrap {
+        margin-top: 15px;
+    }
+    #mainContent section#content article .infoWrap .textWrap .buttonWrap .button {
+        display: block;
+        float: none;
+        width: 100%;
+        text-align: center;
+
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+    #mainContent section#content article#actionButtons {
+        margin-top: 0;
+    }
+    /** End List & Detailed Content **/
 
     /** Footer **/
     footer #footerOuterWrap {
@@ -126,14 +125,6 @@
     }
     footer ul.footerList {
         margin-top: 10px;
-    }
-
-    footer #footerOuterNavWrap #footerNavigation {
-        display: none;
-    }
-    footer #footerOuterNavWrap #creatorInfoWrap {
-        text-align: center;
-        line-height: 18px;
     }
     /** End Footer **/
 }

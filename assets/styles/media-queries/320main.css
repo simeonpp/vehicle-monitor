@@ -1,3 +1,12 @@
 @media only screen and (max-width: 320px) {
-    
+    /** Homepage Content **/
+    section#suppliesWrap ul#suppliesList li {
+        width: 80% !important;
+        margin: 0 auto !important;
+        float: none !important;
+    }
+    section#suppliesWrap ul#suppliesList li:nth-child(2n) {
+        margin-right: auto !important;
+    }
+    /** End Homepage Content **/
 }

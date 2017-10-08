@@ -1,3 +1,58 @@
-@media only screen and (max-width: 768px) and (min-width: 480px) {
+@media only screen and (max-width: 768px) and (min-width: 680px) {
+    /** Common **/
+    .mobile {
+        display: block;
+    }
+    /** End Common **/
     
+    /** Header **/
+    header {
+        height: auto;
+        background: -webkit-linear-gradient(left, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);
+        background: -o-linear-gradient(left, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);
+        background: -ms-linear-gradient(left, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);
+        background: -moz-linear-gradient(left, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);
+        background: linear-gradient(to right, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);        
+    }
+    header #headerWrap {
+        width: 100%;
+        height: auto;
+        background: none;
+    }
+    header #headerWrap #upperHeadWrap #mobileNavButtonWrap {
+        display: inline;
+    }
+    header #headerWrap #upperHeadWrap #navWrap {
+        display: none;
+    }
+    header #mainDrawing {
+        display: none;
+    }
+    header #mainDrawingBg  {
+        display: none;
+    }
+    header #mainDrawingMoon {
+        display: none;
+    }
+    header #sliderWrap {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    header #sliderWrap #sliderContent h2 {
+        font-size: 24px;
+    }
+    header #sliderWrap #sliderContent h3 {
+        margin-top: 8px;
+        font-size: 14px;
+    }
+    header #checkVehicleStatusBigButton {
+        position: static;
+        padding: 8px;
+        font-size: 18px;
+        bottom: 0;
+        left: 0;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    /** End Header **/
 }

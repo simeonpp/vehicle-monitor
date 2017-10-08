@@ -1,0 +1,41 @@
+@media only screen and (max-width: 950px) and (min-width: 768px) {
+    /** Common **/
+    .wrapper {
+        width: 98%;
+    }
+    /** End Common **/
+
+    /** Header **/
+    header #headerWrap {
+        width: 100%;
+    }
+    header #headerWrap #upperHeadWrap #navWrap ul li a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    header #mainDrawing {
+        width: 100%;
+        height: 216px;
+    }
+    header #sliderWrap #sliderContent h2 {
+        font-size: 30px;
+    }
+    header #sliderWrap #sliderContent h3 {
+        font-size: 18px;
+    }
+    header #checkVehicleStatusBigButton {
+        position: absolute;
+        bottom: -22px;
+        left: 295px;
+    }
+    /** End Header **/
+
+    /** Homepage Content **/
+    section#suppliesWrap {
+        width: 100%;
+    }
+    section#suppliesWrap .suppliesWrapDrawing {
+        display: none;
+    }
+    /** End Homepage Content **/
+}
