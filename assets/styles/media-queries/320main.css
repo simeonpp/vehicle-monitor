@@ -8,5 +8,17 @@
     section#suppliesWrap ul#suppliesList li:nth-child(2n) {
         margin-right: auto !important;
     }
+
+    .fullPagePopUp .popUpWrap {
+        height: 475px;
+    }
+    .fullPagePopUp .popUpWrap .actionsWrap {
+        display: block;
+    }
+    .fullPagePopUp .popUpWrap .actionsWrap button {
+        width: 100%;
+        display: block;
+        margin-bottom: 15px;
+    }
     /** End Homepage Content **/
 }

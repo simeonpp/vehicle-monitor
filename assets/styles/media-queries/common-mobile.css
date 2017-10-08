@@ -107,9 +107,6 @@
         margin-top: 15px;
     }
 
-
-
-
     #mainContent section#content article {
         margin-bottom: 55px;
     }
@@ -138,6 +135,12 @@
     }
     #mainContent section#content article#actionButtons {
         margin-top: 0;
+    }
+
+    .fullPagePopUp .popUpWrap {
+        width: 70%;
+        margin: 35px auto 0;
+        padding: 50px 10% 25px;
     }
     /** End List & Detailed Content **/
 

@@ -204,7 +204,32 @@
         
     </footer>
 
+    <div class="fullPagePopUp" id="statusCheckPopUp">
+        <div class="popUpWrap">
+            <div class="closeButton" id="statusCheckPopUpcloseBtn"><img src="./assets/images/close-pop-up-icon.png" alt=""></div>
+            <h3>Check vehicle status</h3>
+
+            <div class="inputBoxWrap">
+                <label for="username">Select vehicle</label>
+                <select>
+                    <option value="1">Peugeot 407</option>
+                    <option value="2">Mercedez-benz</option>
+                </select>
+            </div>
+            <div class="inputBoxWrap">
+                <label for="username">Input mileage</label>
+                <input type="number">
+            </div>
+
+            <div class="actionsWrap">
+                <button class="cancel">Cancel</button>
+                <button class="submit">Check</button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Slider logic
         var sliderMainTexts = [
             'Checking you car status has never been easier',
             'Keep your vehicle in a good driving condition',
@@ -250,6 +275,17 @@
         });
 
         changeSlide(0);
+
+        // Check status pop up
+        var statusCheckPopUp = document.getElementById('statusCheckPopUp');
+        var statusCheckPopUpcloseBtn = document.getElementById('statusCheckPopUpcloseBtn');
+        var checkVehicleStatusBigButton = document.getElementById('checkVehicleStatusBigButton');
+        checkVehicleStatusBigButton.addEventListener('click', function() {
+            statusCheckPopUp.style.height = '100%';
+        });
+        statusCheckPopUpcloseBtn.addEventListener('click', function() {
+            statusCheckPopUp.style.height = '0';
+        });
     </script>
 
 </body>

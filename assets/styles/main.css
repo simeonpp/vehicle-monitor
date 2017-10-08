@@ -30,6 +30,12 @@ h2 {
     font-family: goudyBookletter;
     text-transform: capitalize;
 }
+h3 {
+    font-size: 36px;
+    font-family: goudyBookletter;
+    text-transform: capitalize;
+    text-align: center;
+}
 h4 {
     font-family: goudyBookletter;
     font-size: 24px;
@@ -120,6 +126,30 @@ h6 {
     border-radius: 5px;
 }
 
+.inputBoxWrap {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+}
+.inputBoxWrap label {
+    display: block;
+    margin-bottom: 10px;
+}
+.inputBoxWrap input {
+    width: 100%;
+    display: block;
+    padding: 10px 10px;
+    border: 1px solid #cccccc;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
 /** Login **/
 #loginOuterWrap {
     display: flex;
@@ -167,29 +197,6 @@ h6 {
 #loginOuterWrap #loginWrap #loginRightSection h2 {
     text-align: center;
     margin-bottom: 25px;
-}
-#loginOuterWrap #loginWrap #loginRightSection .inputBoxWrap {
-    width: 100%;
-    display: block;
-    margin-bottom: 15px;
-}
-#loginOuterWrap #loginWrap #loginRightSection .inputBoxWrap label {
-    display: block;
-    margin-bottom: 10px;
-}
-#loginOuterWrap #loginWrap #loginRightSection .inputBoxWrap input {
-    width: 100%;
-    display: block;
-    padding: 10px 10px;
-    border: 1px solid #cccccc;
-
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
 }
 #loginOuterWrap #loginWrap #loginRightSection button {
     width: 100%;
@@ -715,6 +722,96 @@ section#breadcrumbsWrap ul li a {
 .tableAdditionalInfo table tbody tr:nth-child(2n) {
     background: #f7f7f7;
 }
+
+/** Pop ups **/
+.fullPagePopUp {
+    width: 100%;
+    height: 0;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0, 0.2);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    /* transition: 0.3s; */
+}
+.fullPagePopUp .popUpWrap {
+    width: 550px;
+    height: 375px;
+    margin: 175px auto 0;
+    padding: 50px 25px 25px;
+    background: white;
+    border: 1px solid #cccccc;
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.fullPagePopUp .popUpWrap .closeButton {
+    width: 45px;
+    height: 35px;
+    position: absolute;
+    top: 15px;;
+    right: 0;
+}
+.fullPagePopUp .popUpWrap .closeButton img {
+    width: 100%;
+    cursor: pointer;
+}
+.fullPagePopUp .popUpWrap input {
+    padding: 12px 20px;
+    font-size: 16px;
+}
+.fullPagePopUp .popUpWrap select {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+.fullPagePopUp .popUpWrap .actionsWrap {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.fullPagePopUp .popUpWrap .actionsWrap button {
+    padding: 15px 35px;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    font-weight: bold;
+    font-size: 18px;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.fullPagePopUp .popUpWrap .actionsWrap .cancel {
+    justify-content: flex-start;
+    background: white;
+    color: #8c8a8a;
+}
+.fullPagePopUp .popUpWrap .actionsWrap .cancel:hover {
+    background: #fbfbfb;
+}
+.fullPagePopUp .popUpWrap .actionsWrap .submit {
+    justify-content: flex-end;
+    border-color: #88bfbd;
+    color: white;
+    background: #95d0ce;
+}
+.fullPagePopUp .popUpWrap .actionsWrap .submit:hover {
+    background: #8ec6c4;
+}
+/** End Pop ups **/
+
+/** Check status pop up **/
+#statusCheckPopUp h3 {
+    margin-bottom: 40px;
+}
+#statusCheckPopUp label {
+    font-size: 18px;
+}
+/** End Check status pop up **/
 
 footer #footerOuterWrap {
     width: 100%;
