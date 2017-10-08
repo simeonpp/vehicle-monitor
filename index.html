@@ -8,21 +8,30 @@
 
     <link rel="stylesheet" type="text/css" href="./assets/styles/reset.css">
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.css">
+
+    <link rel="stylesheet" type="text/css" href="./assets/styles/media-queries/320main.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/media-queries/480main.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/media-queries/768main.css">
 </head>
 <body>
     <header>
+        <div id="headerTopLine"></div>
         <!-- <div id="header-bg-lines-pattern"></div> -->
 
         <div class="wrapper">            
             <div id="headerWrap">
 
                 <div id="upperHeadWrap">
+
                     <div id="logoWrap">
                         <div id="logo">
                             <a href="index.html"><img src="./assets/images/Logo.png" alt="Logo"></a>
                         </div>
-                        <div id="slogan">Vehicles in goo</div>
+                        <div id="slogan">Drive safety</div>
                     </div>
+
+                    <div id="mobileNavButtonWrap"></div>
+
                     <div id="navWrap">
                         <ul>
                             <li><a href="#">Home</a></li>
@@ -31,8 +40,9 @@
                             <li><a href="#">Maintenance</a></li>
                             <li><a href="#">Supply settings</a></li>
                         </ul>
-                    </div>
-                </div> <!-- end navWrap -->
+                    </div> <!-- end navWrap -->
+
+                </div> <!-- end upperHeadWrap -->
 
                 <div id="sliderWrap">
                     <div class="arrow left" id="sliderLeftArrow"><img src="./assets/images/slider-arrow-rigth.png" alt="arrow"></div>
@@ -82,6 +92,7 @@
 
         </section>
 
+        <h2 class="mobile">Supplies</h2>
         <section id="suppliesWrap">
             <div class="suppliesWrapDrawing" id="suppliesWrapDrawingLeft"></div>
             <div class="suppliesWrapDrawing" id="suppliesWrapDrawingRight"></div>
