@@ -1,7 +1,7 @@
 var homeController = function() {
-    var templateData = {};
-
     function get(context) {
+        var templateData = {};
+
         generalHelper.setHeaderAndFooter({setFullHeader: true})
         .then(() => {
             return cacheData.getSupplies();

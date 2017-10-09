@@ -13,9 +13,19 @@ var generalHelper = function() {
         }
     }
 
+    function formatShortDate(date) {
+        var jsDate = new Date(date);
+        var monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        return monthNames[jsDate.getMonth()] + ' ' + jsDate.getDate() + ', ' + jsDate.getFullYear();
+    }
+
     return {
         setHeaderAndFooter,
-        handleError
+        handleError,
+        formatShortDate
     }
 
 }();

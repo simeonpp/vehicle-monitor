@@ -1,9 +1,9 @@
 var maintenancesData = function() {
     var url = '/api/maintenances.php';
 
-    function getAll(pageSize = 10, vehicleId, noPaging) {
+    function getAll(pageSize = 10, page = 1, vehicleId, noPaging) {
         var options = {headers: authenticationHelper.getAuthenticationHeaders()};
-        var pageSizedUrl = url + '?pageSize=' + pageSize;
+        let pageSizedUrl = `${url}?pageSize=${pageSize}&page=${page}`;
         if (vehicleId) {
             pageSizedUrl += `&vehicleId=${vehicleId}`;
         }
@@ -20,8 +20,21 @@ var maintenancesData = function() {
             });
     }
 
+    function getById(maintenanceId) {
+        const options = {headers: authenticationHelper.getAuthenticationHeaders()};
+        const maintenanceByIdUrl = `${url}/${maintenanceId}`;
+        return jsonRequester.get(data.buildUri(maintenanceByIdUrl), options)
+            .then(function(maintenanceDetails) {
+                return maintenanceDetails;
+            })
+            .catch(function(error) {
+                generalHelper.handleError(error);
+            });
+    }
+
     return {
-        getAll
+        getAll,
+        getById
     }
 
 }();

@@ -17,8 +17,26 @@ var checksData = function() {
             });
     }
 
+    function check(vehicleId, mileage = 1) {
+        var options = {
+            headers: authenticationHelper.getAuthenticationHeaders(),
+            data: {
+                vehicleId: parseInt(vehicleId),
+                mileage: parseInt(mileage)
+            }
+        };
+        return jsonRequester.post(data.buildUri(url), options)
+            .then(function(checkStatus) {
+                return checkStatus;
+            })
+            .catch(function(error) {
+                generalHelper.handleError(error);
+            });
+    }
+
     return {
-        getAll
+        getAll,
+        check
     }
 
 }();
