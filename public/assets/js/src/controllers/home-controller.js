@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var homeController = function() {
     function get(context) {
         var templateData = {};
@@ -7,7 +9,7 @@ var homeController = function() {
             return cacheData.getSupplies();
         })
         .then(function(supplies) {
-            templateData['supplies'] = supplies.supplies;
+            templateData.supplies = supplies.supplies;
             return templates.get('home');
         })
         .then(function(template) {
@@ -18,6 +20,6 @@ var homeController = function() {
 
     return {
         get: get
-    }
+    };
 
 }();

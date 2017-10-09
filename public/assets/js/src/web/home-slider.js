@@ -28,7 +28,7 @@ var changeSlide = function(slideIndex) {
     if (slideIndex === maxSliderIndex - 1) {
         sliderRightArrow.style.display = 'none';
     }
-}        
+};   
 sliderLeftArrow.addEventListener('click', function() {
     if (currentSliderIndex - 1 >= 0) {
         currentSliderIndex -= 1;

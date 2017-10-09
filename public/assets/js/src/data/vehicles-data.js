@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var vehiclesData = function() {
     var url = '/api/vehicles.php';
 
@@ -29,6 +31,6 @@ var vehiclesData = function() {
     return {
         getAll,
         getById
-    }
+    };
 
 }();

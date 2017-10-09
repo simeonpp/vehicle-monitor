@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var headerController = function() {
     
     function set({setFullHeader = false, title = '', subTitle = ''}) {
@@ -30,6 +32,6 @@ var headerController = function() {
 
     return {
         set: set
-    }
+    };
 
 }();

@@ -1,7 +1,9 @@
+/*jshint esversion: 6 */
+
 var checksData = function() {
     var url = '/api/checks.php';
 
-    function getAll(pageSize = 10, vehicleId) {
+    function getAll(pageSize = 10, vehicleId = null) {
         var options = {headers: authenticationHelper.getAuthenticationHeaders()};
         var pageSizedUrl = url + '?pageSize=' + pageSize;
         if (vehicleId) {
@@ -37,6 +39,6 @@ var checksData = function() {
     return {
         getAll,
         check
-    }
+    };
 
 }();

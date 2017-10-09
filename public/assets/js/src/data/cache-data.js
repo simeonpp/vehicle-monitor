@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var cacheData = function() {
     var cache = {};
     const expireCacheMinutes = 15;
@@ -19,7 +21,7 @@ var cacheData = function() {
         });
 
         return promise;
-    }
+    };
 
     var getMaintenances = function() {
         var promise = new Promise(function(resolve, reject) {
@@ -38,7 +40,7 @@ var cacheData = function() {
         });
 
         return promise;
-    }
+    };
 
     var getSupplies = function() {
         var promise = new Promise(function(resolve, reject) {
@@ -57,7 +59,7 @@ var cacheData = function() {
         });
 
         return promise;
-    }
+    };
 
     var getCheckHistory = function() {
         var mapChecks = function(check) {
@@ -85,7 +87,7 @@ var cacheData = function() {
         });
 
         return promise;
-    }
+    };
 
     // const cacheKeyGetterMapper = {
     //     vehicles: getVehicles,
@@ -119,6 +121,6 @@ var cacheData = function() {
         getMaintenances,
         getSupplies,
         getCheckHistory
-    }
+    };
 
 }();

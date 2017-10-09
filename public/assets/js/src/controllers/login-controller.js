@@ -14,6 +14,6 @@ var loginController = function() {
 
     return {
         get: get
-    }
+    };
 
 }();

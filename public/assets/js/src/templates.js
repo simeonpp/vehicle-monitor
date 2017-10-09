@@ -26,7 +26,7 @@ var templates = function() {
                 .then(function(html) {
                     var template = Handlebars.compile(html);
                     resolve(template);
-                })
+                });
         });
 
         return promise;
@@ -34,7 +34,7 @@ var templates = function() {
 
     return {
         get: get
-    }
+    };
 
 }();
     

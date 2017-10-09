@@ -1,4 +1,7 @@
+/*jshint esversion: 6 */
+
 var suppliesController = function() {
+
     const breadcrumbs = {
         list: [
             {name: 'Home', link: '#/home', isActive: false},
@@ -30,7 +33,7 @@ var suppliesController = function() {
             })
             .then(function(maintenances) {
                 templateData.aside.maintenances = maintenances;
-                return cacheData.getVehicles()
+                return cacheData.getVehicles();
             })
             .then((vehicles) => {
                 let asideVehicles = [].concat(vehicles.map((v) => {
@@ -58,10 +61,10 @@ var suppliesController = function() {
                 $('#hb-content').html(template(templateData));
                 return Promise.resolve();
             });
-    };
+    }
 
     return {
         get
-    }
+    };
 
 }();

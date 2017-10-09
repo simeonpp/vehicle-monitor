@@ -5,10 +5,10 @@ var navCheckStatusHref = document.getElementById('navCheckStatusHref');
 var navFooterCheckStatusHref = document.getElementById('navFooterCheckStatusHref');
 var closeStatusCheckPopUp = function() {
     statusCheckPopUp.style.height = '0';
-}
+};
 var openStatusCheckPopUp = function() {
     statusCheckPopUp.style.height = '100%';
-}
+};
 
 navCheckStatusHref.addEventListener('click', function(e) {
     e.preventDefault();

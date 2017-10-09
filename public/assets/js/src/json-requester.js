@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var jsonRequester = function() {
     
     function send(url, method, options) {
@@ -43,7 +45,7 @@ var jsonRequester = function() {
     return {
         get,
         post
-    }
+    };
 
 }();
     

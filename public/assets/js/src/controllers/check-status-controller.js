@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var checkStatusController = function() {
     const breadcrumbs = {
         detailed: [
@@ -11,7 +13,7 @@ var checkStatusController = function() {
             checkStatus: checks.checkStatus,
             recommendationStatus: checks.recommendationStatus,
             checks: []
-        }
+        };
 
         result.checks = checks.checks.map(check => {
             var status = 'Good';
@@ -27,7 +29,7 @@ var checkStatusController = function() {
         });
 
         return result;
-    }
+    };
 
     function get(context) {
         var templateData = { 
@@ -65,16 +67,16 @@ var checkStatusController = function() {
                 templateData.checkStatus.statusTitle = statusTitle;
                 templateData.checkStatus.imageIconName = imageIconName;
 
-                return templates.get('check-status')
+                return templates.get('check-status');
             })
             .then(function(template) {
                 $('#hb-content').html(template(templateData));
                 return Promise.resolve();
             });
-    };
+    }
 
     return {
         get
-    }
+    };
 
 }();

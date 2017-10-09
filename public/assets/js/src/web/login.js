@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var loginBtn = document.getElementById('loginBtn');
 var loginUsername = document.getElementById('loginUsername');
 var loginPassword = document.getElementById('loginPassword');

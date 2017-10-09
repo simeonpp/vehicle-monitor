@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var authenticationHelper = function() {
 
     function validateSession() {
@@ -34,6 +36,6 @@ var authenticationHelper = function() {
         getCookie,
         handleInvalidSession,
         getAuthenticationHeaders
-    }
+    };
 
 }();

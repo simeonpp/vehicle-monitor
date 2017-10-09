@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var vehiclesController = function() {
     const breadcrumbs = {
         list: [
@@ -20,12 +22,12 @@ var vehiclesController = function() {
             subTitle: 'Keep your vehicles in good driving conditions'
         })
         .then(() => {
-            return vehiclesData.getAll(5, page)
+            return vehiclesData.getAll(5, page);
         })
         .then((vehiclesResult) => {
             templateData.vehicles = vehiclesResult.results;
             templateData.pagination = vehiclesResult.pagination;
-            return cacheData.getMaintenances()
+            return cacheData.getMaintenances();
         })
         .then(function(maintenances) {
             templateData.aside = { maintenances };
@@ -43,7 +45,7 @@ var vehiclesController = function() {
             $('#hb-content').html(template(templateData));
             return Promise.resolve();
         });
-    };
+    }
 
     function getById(context) {
         var templateData = { 
@@ -83,11 +85,11 @@ var vehiclesController = function() {
                 $('#hb-content').html(template(templateData));
                 return Promise.resolve();
             });
-    };
+    }
 
     return {
         get,
         getById
-    }
+    };
 
 }();

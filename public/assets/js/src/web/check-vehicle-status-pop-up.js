@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 // Check status pop up
 var statusCheckBtn = document.getElementById('statusCheckBtn');
 var vehicleStatusVehicleSelect = document.getElementById('vehicleStatusVehicleSelect');

@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var maintenancesController = function() {
     const breadcrumbs = {
         list: [
@@ -35,7 +37,7 @@ var maintenancesController = function() {
         })
         .then(function(supplies) {
             templateData.aside.supplies = supplies.supplies;
-            return cacheData.getVehicles()
+            return cacheData.getVehicles();
         })
         .then((vehicles) => {
             let asideVehicles = [].concat(vehicles.map((v) => {
@@ -56,7 +58,7 @@ var maintenancesController = function() {
             $('#hb-content').html(template(templateData));
             return Promise.resolve();
         });
-    };
+    }
 
     function getById(context) {
         var templateData = { 
@@ -94,11 +96,11 @@ var maintenancesController = function() {
                 $('#hb-content').html(template(templateData));
                 return Promise.resolve();
             });
-    };
+    }
 
     return {
         get,
         getById
-    }
+    };
 
 }();

@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var generalHelper = function() {
     
     function setHeaderAndFooter({setFullHeader = false, title = '', subTitle = ''}) {
@@ -26,6 +28,6 @@ var generalHelper = function() {
         setHeaderAndFooter,
         handleError,
         formatShortDate
-    }
+    };
 
 }();

@@ -27,7 +27,9 @@
     "gulp-clean-css": "^3.9.0",
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^2.3.0",
+    "gulp-jshint": "^2.0.4",
     "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5",
     "pump": "^1.0.2"
   }
 }

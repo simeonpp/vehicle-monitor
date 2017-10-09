@@ -2,7 +2,7 @@ var sammyApp = new Sammy('#hb-content', function() {
     
         var isUserLogged = function() {
             return authenticationHelper.validateSession();
-        }
+        };
 
         this.get('#/', function(context) {
             context.redirect('#/home');

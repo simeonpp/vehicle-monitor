@@ -1,7 +1,9 @@
+/*jshint esversion: 6 */
+
 var maintenancesData = function() {
     var url = '/api/maintenances.php';
 
-    function getAll(pageSize = 10, page = 1, vehicleId, noPaging) {
+    function getAll(pageSize = 10, page = 1, vehicleId = null, noPaging = false) {
         var options = {headers: authenticationHelper.getAuthenticationHeaders()};
         let pageSizedUrl = `${url}?pageSize=${pageSize}&page=${page}`;
         if (vehicleId) {
@@ -35,6 +37,6 @@ var maintenancesData = function() {
     return {
         getAll,
         getById
-    }
+    };
 
 }();

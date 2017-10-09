@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var data = function() {
     var host = 'http://localhost/vehicleMonitor';
 
@@ -7,6 +9,6 @@ var data = function() {
 
     return {
         buildUri
-    }
+    };
 
 }();
