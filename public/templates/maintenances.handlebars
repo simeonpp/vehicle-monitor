@@ -37,7 +37,7 @@
 
             {{#each maintenances}}
                 <article>
-                    <h2>{{this.service}}</h2>
+                    <h2><a href="#/maintenances/{{this.id}}">{{this.service}}</a></h2>
                     <div class="subTitle">Price <span class="bold">{{this.price}} BGN</span>, mileage <span class="bold">{{accountNumber this.mileage}} km</span> | {{formatShortDate this.dateCreated}}</div>
                     <div class="infoWrap">
                         <div class="textWrap">
@@ -70,7 +70,7 @@
                 <h4>Supplies</h4>
                 <ul>
                     {{#each aside.supplies}}
-                        <li><a href="#/supplies}">{{this.displayName}}</a></li>
+                        <li><a href="#/supplies">{{this.displayName}}</a></li>
                     {{/each}}
                 </ul>
             </section>
@@ -104,4 +104,4 @@
     </div> <!-- mainContent -->
 </div> <!-- wrapper -->
 
-<script src="assets/js/src/web/maintenances-filters.js"></script>
+<script src="dist/scripts/maintenances-filters.js"></script>

@@ -22,6 +22,7 @@ var headerController = function() {
                 return templates.get('header');
             })
             .then(function(template) {
+                $('#hb-content').height('auto');
                 $('#hb-header').html(template(templateData));
                 return Promise.resolve();
             });
