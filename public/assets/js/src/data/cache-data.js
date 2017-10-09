@@ -60,6 +60,15 @@ var cacheData = function() {
     }
 
     var getCheckHistory = function() {
+        var mapChecks = function(check) {
+            if (parseInt(check.checkStatus) === 1) {
+                check.checkStatus = true;
+            } else {
+                check.checkStatus = false;
+            }
+            return check;
+        };
+
         var promise = new Promise(function(resolve, reject) {
             if (!cache.checks || (cache.checks && cache.checks.cacheExpireDate < new Date() )) {
                 return checksData.getAll(5)    
@@ -68,7 +77,7 @@ var cacheData = function() {
                         var now = new Date();
                         var cacheExpireDate = new Date(now.getTime() + expireCacheMinutes * 60000);
                         cache.checks.cacheExpireDate = cacheExpireDate;
-                        return resolve(cache.checks);
+                        return resolve(cache.checks.map(mapChecks));
                     }); 
             } else {
                 return resolve(cache.checks);

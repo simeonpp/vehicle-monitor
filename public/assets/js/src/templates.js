@@ -4,12 +4,7 @@ var templates = function() {
         handlebars = window.handlebars || window.Handlebars;
 
     Handlebars.registerHelper('formatShortDate', function(date) {
-        var jsDate = new Date(date);
-        var monthNames = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
-        return monthNames[jsDate.getMonth()] + ' ' + jsDate.getDate() + ', ' + jsDate.getFullYear();
+        return generalHelper.formatShortDate(date);
     });
 
     Handlebars.registerHelper('accountNumber', function(date) {

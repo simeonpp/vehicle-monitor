@@ -33,6 +33,38 @@ var sammyApp = new Sammy('#hb-content', function() {
                 context.redirect('#/login');
             }
         });
+
+        this.get('#/maintenances', function(context) {
+            if (isUserLogged()) {
+                maintenancesController.get(context);
+            } else {
+                context.redirect('#/login');
+            }
+        });
+
+        this.get('#/maintenances/:id', function(context) {
+            if (isUserLogged()) {
+                maintenancesController.getById(context);
+            } else {
+                context.redirect('#/login');
+            }
+        });
+
+        this.get('#/supplies', function(context) {
+            if (isUserLogged()) {
+                suppliesController.get(context);
+            } else {
+                context.redirect('#/login');
+            }
+        });
+
+        this.get('#/check-status/:id', function(context) {
+            if (isUserLogged()) {
+                checkStatusController.get(context);
+            } else {
+                context.redirect('#/login');
+            }
+        });
         
         // this.get(/.*/, function() { 
         //     ...

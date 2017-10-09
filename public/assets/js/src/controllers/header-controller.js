@@ -1,15 +1,28 @@
 var headerController = function() {
     
     function set({setFullHeader = false, title = '', subTitle = ''}) {
-        return templates.get('header')
+        var templateData = {
+            showSlider: setFullHeader,
+            showSmallHeaderHeight: !setFullHeader,
+            title,
+            subTitle
+        };
+
+        return cacheData.getVehicles()
+            .then((vehicles) => {
+                let mappedVehicles = vehicles.map((v, index) => {
+                    v.isFirst = false;
+                    if (index === vehicles.length) {
+                        v.isFirst = true;
+                    }
+                    return v;
+                });
+                let newVehicles = [].concat(mappedVehicles);
+                templateData.vehicles = newVehicles;
+                return templates.get('header');
+            })
             .then(function(template) {
-                var data = {
-                    showSlider: setFullHeader,
-                    showSmallHeaderHeight: !setFullHeader,
-                    title,
-                    subTitle
-                };
-                $('#hb-header').html(template(data));
+                $('#hb-header').html(template(templateData));
                 return Promise.resolve();
             });
     }
