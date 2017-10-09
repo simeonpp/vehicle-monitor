@@ -1,0 +1,107 @@
+<section id="breadcrumbsWrap">
+    <div class="wrapper">
+        <ul>
+            {{#each breadcrumbs}}
+                <li>
+                {{#if this.isActive}}
+                    {{this.name}}
+                {{else}}
+                    <a href="{{this.link}}">{{this.name}} »</a>
+                {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</section> <!-- breadcrumbsWrap -->
+
+<div class="wrapper">
+    <div id="mainContent">
+
+        <section id="content">
+            <div id="filtersWrap">
+                <div id="filters">
+                    Filter by car
+                    <select id="filterByVehicleSelect">
+                        <option value="0">All</option>
+                        {{#each aside.vehicles}}
+                            <option value="{{this.id}}" {{#if this.filterByIsActive}}selected{{/if}}>
+                                {{this.displayName}}
+                            </option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div id="addNewButtonWrap">
+                    <div class="button">Add new</div>
+                </div>
+            </div> <!-- filtersWrap -->
+
+            {{#each maintenances}}
+                <article>
+                    <h2>{{this.service}}</h2>
+                    <div class="subTitle">Price <span class="bold">{{this.price}} BGN</span>, mileage <span class="bold">{{accountNumber this.mileage}} km</span> | {{formatShortDate this.dateCreated}}</div>
+                    <div class="infoWrap">
+                        <div class="textWrap">
+                            {{this.description}}
+                            <div class="buttonWrap">
+                                <a href="#/maintenances/{{this.id}}" class="button">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            {{/each}}
+
+            <div id="paginationWrap">
+                <div id="pageOfWrap">
+                    Page {{pagination.page}} of {{pagination.totalPages}}
+                </div>
+                <div id="paginationButtonsWrap">
+                    <ul>
+                        {{#times pagination.totalPages}}
+                            <li><a href="#/maintenances?page={{this}}">{{this}}</a></li>
+                        {{/times}}
+                    </ul>
+                </div>
+            </div> <!-- paginationWrap -->
+
+        </section> <!-- content -->
+
+        <aside>
+            <section>
+                <h4>Supplies</h4>
+                <ul>
+                    {{#each aside.supplies}}
+                        <li><a href="#/supplies}">{{this.displayName}}</a></li>
+                    {{/each}}
+                </ul>
+            </section>
+            
+            <section>
+                <h4>Vehicles</h4>
+                <ul>
+                    {{#each aside.vehicles}}
+                        <li><a href="#/vehicles/{{this.id}}">{{this.displayName}}</a></li>
+                    {{/each}}
+                </ul>
+            </section>
+
+            <section>
+                <h4>Recent Checks</h4>
+                <ul>
+                    {{#each aside.checks}}
+                        <li>
+                            {{this.displayName}}, {{this.mileage}} -
+                            {{#if this.checkStatus}}
+                                Ok
+                            {{else}}
+                                Bad
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            </section>
+        </aside>
+
+    </div> <!-- mainContent -->
+</div> <!-- wrapper -->
+
+<script src="assets/js/src/web/maintenances-filters.js"></script>

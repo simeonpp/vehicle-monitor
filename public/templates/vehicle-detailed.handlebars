@@ -1,0 +1,112 @@
+<section id="breadcrumbsWrap">
+    <div class="wrapper">
+        <ul>
+            {{#each breadcrumbs}}
+                <li>
+                {{#if this.isActive}}
+                    {{this.name}}
+                {{else}}
+                    <a href="{{this.link}}">{{this.name}} »</a>
+                {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</section> <!-- breadcrumbsWrap -->
+
+<div class="wrapper">
+    <div id="mainContent">
+
+        <section id="content">
+            <article>
+                <div class="infoWrap noTopMargin">
+                    <div class="imageWrap"><img src="{{vehicle.imageUrl}}" alt="{{vehicle.displayName}} image"></div>
+                    <div class="textWrap">
+                        {{vehicle.description}}
+                    </div>
+                </div>
+            </article>
+
+            <article id="actionButtons">
+                <ul>
+                    <li><div class="button">Check status</div></li>
+                    <li><div class="button">Add maintanance</div></li>
+                </ul>
+            </article>
+
+            <article class="listDetails">
+                <ul>
+                    <li>Mileage: {{accountNumber vehicle.mileage}}</li>
+                    <li>Make: {{vehicle.make}}</li>
+                    <li>Model: {{vehicle.model}}</li>                    
+                    <li>Year: {{vehicle.year}}</li>
+                    <li>Engine: {{vehicle.engine}}</li>
+                    <li>Engine Power: {{vehicle.power}}</li>
+                    <li>Fuel system: {{vehicle.fuelSystem}}</li>
+                    <li>Max speed: {{vehicle.maxSpeed}} km/h</li>
+                    <li>Acceleration 0-100: {{vehicle.acceleration}} seconds</li>
+                    <li>Fuel tank volume: {{vehicle.fuelTankVolume}}</li>
+                    <li>Tire size: {{vehicle.tireSize}}</li>
+                    <li>Doors: {{vehicle.doors}}</li>
+                </ul>
+            </article>
+
+            <article id="vehicleMaintenancesWrap" class="extraInfoWrap">
+                <h4>{{maintenances.length}} Maintenances</h4>
+                <ul>
+                    {{#each maintenances}}
+                        <li>
+                            <div class="title">
+                                <div class="mainInfo">{{this.service}}</div>
+                                <div class="secondaryInfo">| {{formatShortDate this.dateCreated}}</div>
+                            </div>
+                            <div class="additionalinfo"><span class="bold">Price: </span> {{this.price}} BGN</div>
+                            <div class="additionalinfo"><span class="bold">Mileage: </span> {{accountNumber this.mileage}} km</div>
+                            <p class="description">{{this.description}}</p>
+                            <div class="buttonWrap">
+                                <a href="#/maintenances/{{this.id}}" class="button">Read more</a>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            </article>
+        </section> <!-- content -->
+
+        <aside>
+            <section>
+                <h4>Recent maintenances</h4>
+                <ul>
+                    {{#each aside.maintenances}}
+                        <li><a href="#/maintenances/{{this.id}}">{{this.service}} - {{formatShortDate this.dateCreated}}</a></li>
+                    {{/each}}
+                </ul>
+            </section>
+
+            <section>
+                <h4>Supplies</h4>
+                <ul>
+                    {{#each aside.supplies}}
+                        <li><a href="#/supplies#{{this.id}}"></a>{{this.displayName}}</a></li>
+                    {{/each}}
+                </ul>
+            </section>
+
+            <section>
+                <h4>Recent Checks</h4>
+                <ul>
+                    {{#each aside.checks}}
+                        <li>
+                            {{this.displayName}}, {{this.mileage}} -
+                            {{#if this.checkStatus}}
+                                Ok
+                            {{else}}
+                                Bad
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            </section>
+        </aside>
+
+    </div> <!-- mainContent -->
+</div> <!-- wrapper -->

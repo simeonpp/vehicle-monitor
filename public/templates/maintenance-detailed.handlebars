@@ -1,0 +1,140 @@
+<section id="breadcrumbsWrap">
+    <div class="wrapper">
+        <ul>
+            {{#each breadcrumbs}}
+                <li>
+                {{#if this.isActive}}
+                    {{this.name}}
+                {{else}}
+                    <a href="{{this.link}}">{{this.name}} »</a>
+                {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</section> <!-- breadcrumbsWrap -->
+
+<div class="wrapper">
+    <div id="mainContent">
+
+        <section id="content">
+            <article>
+                <div class="infoWrap noTopMargin">
+                    <div class="textWrap">
+                        {{maintenance.description}}
+                    </div>
+                </div>
+            </article>
+
+            <article id="actionButtons">
+                <ul>
+                    <li><a href="#/vehicles/{{maintenance.vehicleId}}" class="button">View vehicle</a></li>
+                </ul>
+            </article>
+
+            <article class="listDetails">
+                <ul>
+                    <li>Service: {{maintenance.service}}</li>
+                    <li>Price: {{maintenance.price}} BGN</li>
+                    <li>Mileage: {{accountNumber maintenance.mileage}} km</li>
+                    <li>Date: {{formatShortDate maintenance.dateCreated}}</li>
+                </ul>
+            </article>
+
+            <article id="vehicleSuppliescWrap" class="extraInfoWrap">
+                <h4>{{supplies.length}} Supplies</h4>
+                <ul>
+                    {{#each supplies}}
+                        <li>
+                            <div class="title">
+                                <div class="mainInfo">{{this.displayName}}</div>
+                                <div class="secondaryInfo">| {{this.service.price}} BGN</div>
+                            </div>
+                            <div class="tableAdditionalInfo">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Original setting</th> 
+                                            <th>In service</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Quantity</td>
+                                            <td>{{this.quantity}}</td> 
+                                            <td>{{this.service.quantity}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Suitable Parts</td>
+                                            <td>
+                                                {{#if this.suitableParts}}
+                                                    {{this.suitableParts}}
+                                                {{else}}
+                                                    -
+                                                {{/if}}
+                                            </td> 
+                                            <td>{{this.service.supplyName}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Price</td>
+                                            <td>{{this.price}} BGN</td> 
+                                            <td>{{this.service.price}} BGN</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Km for/next change</td>
+                                            <td>{{accountNumber this.kmForChange}}</td> 
+                                            <td>{{accountNumber this.service.nextChangeKm}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Days for/next change</td>
+                                            <td>{{this.daysForChange}}</td> 
+                                            <td>{{formatShortDate this.service.nextChangeDate}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            </article>
+        </section> <!-- content -->
+
+        <aside>
+            <section>
+                <h4>Recent maintenances</h4>
+                <ul>
+                    {{#each aside.maintenances}}
+                        <li><a href="#/maintenances/{{this.id}}">{{this.service}} - {{formatShortDate this.dateCreated}}</a></li>
+                    {{/each}}
+                </ul>
+            </section>
+
+            <section>
+                <h4>Vehicles</h4>
+                <ul>
+                    {{#each aside.vehicles}}
+                        <li><a href="#/vehicles/{{this.id}}">{{this.displayName}}</a></li>
+                    {{/each}}
+                </ul>
+            </section>
+
+            <section>
+                <h4>Recent Checks</h4>
+                <ul>
+                    {{#each aside.checks}}
+                        <li>
+                            {{this.displayName}} -
+                            {{#if this.checkStatus}}
+                                Ok
+                            {{else}}
+                                Bad
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            </section>
+        </aside>
+
+    </div> <!-- mainContent -->
+</div> <!-- wrapper -->

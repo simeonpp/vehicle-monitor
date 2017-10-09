@@ -1,0 +1,72 @@
+<footer>
+
+    <div id="footerOuterWrap">
+        <div class="wrapper">
+                
+            <div id="footerWrap">
+
+                <article id="footerInfoWrap">
+
+                    <div id="footerLogoInfoWrap">
+                        <div id="footerLogoWrap">
+                            <a href="index.html"><img src="./assets/images/Logo.png" alt="Logo"></a>
+                        </div>
+                        <div id="footerLogoTextWrap">@ 2017 Modest Inc</div>
+                    </div>
+
+                    <div id="footerTextWrap">
+                        <div class="imageWrap"><img src="./assets/images/what-we-offer-icon-reversed.png" alt="what we offer icon"></div>
+                        We offer to our clients tool for monitoring their vehicles. Having your car checked once in a while is ideal to keep your car in a good driving condition and avoid costly repairs.
+                    </div>
+
+                </article> <!-- footerInfoWrap -->
+
+                <article>
+                    <h6>Recent maintenances</h6>
+                    <ul class="footerList">
+                        {{#each maintenances}}
+                            <li><a href="#/maintenances/{{this.id}}">{{this.service}} - {{formatShortDate this.dateCreated}}</a></li>
+                        {{/each}}
+                    </ul>
+                </article>
+
+                <article>
+                    <h6>Vehicles</h6>
+                    <ul class="footerList">
+                        {{#each vehicles}}
+                            <li><a href="#/vehicles/{{this.id}}">{{this.displayName}}</a></li>
+                        {{/each}}
+                    </ul>
+                </article>
+
+            </div> <!-- #footerWrap -->
+
+        </div> <!-- end .wrapper -->
+    </div> <!-- footerOuterWrap -->
+
+    <div id="footerOuterNavWrap">
+        <div class="wrapper">
+            <div id="footerNavWrap">
+
+                <div id="footerNavigation">
+                    <ul>
+                        <li><a href="#/home">Home</a></li>
+                        <li><a href="." id="navFooterCheckStatusHref">Check Status </a></li>
+                        <li><a href="#/vehicles">Vehicles</a></li>
+                        <li><a href="#/maintenances">Maintenance</a></li>
+                        <li><a href="#/supplies">Supply settings</a></li>
+                    </ul>
+                </div> <!-- footerNavWrap -->
+
+                <div id="creatorInfoWrap">
+                    Designed by <span class="person">Simeon Petkov</span> | Powered by <span class="person">Simeon</span>
+                </div> <!-- creatorInfoWrap -->    
+
+            </div> <!-- footerNavWrap -->
+        </div> <!-- wrapper -->
+    </div> <!-- footerNavWrap -->
+ 
+</footer>
+
+{{!-- For navigation --}}
+<script src="assets/js/src/web/check-status-nav-pop-up.js"></script>   

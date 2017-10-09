@@ -1,0 +1,54 @@
+<section id="breadcrumbsWrap">
+    <div class="wrapper">
+        <ul>
+            {{#each breadcrumbs}}
+                <li>
+                {{#if this.isActive}}
+                    {{this.name}}
+                {{else}}
+                    <a href="{{this.link}}">{{this.name}} »</a>
+                {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</section> <!-- breadcrumbsWrap -->
+
+<div class="wrapper">
+    <div id="mainContent">
+
+        <section id="statusCheckWrap">
+            <h3>{{checkStatus.statusTitle}}</h3>
+            <div id="statusIconWrap">
+                <img src="./assets/images/{{checkStatus.imageIconName}}-icon.png" alt="">
+            </div>
+            
+            <h4>Supplies</h4>
+            <div class="tableAdditionalInfo">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Supply name</th>
+                            <th>Next mileage change</th> 
+                            <th>Next mileage left</th> 
+                            <th>Next date change</th>
+                            <th>Days left</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each checkStatus.checks}}
+                            <tr class="status{{this.status}}">
+                                <td>{{this.supplyDisplayName}}</td>
+                                <td>{{accountNumber this.mileageCheck.nextChange}} km</td> 
+                                <td>{{accountNumber this.mileageCheck.left}} km</td>
+                                <td>{{formatShortDate this.daysCheck.nextChange}}</td> 
+                                <td>{{this.daysCheck.left}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div> <!-- mainContent -->
+</div> <!-- wrapper -->

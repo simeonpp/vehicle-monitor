@@ -1,0 +1,94 @@
+<header {{#if showSmallHeaderHeight}}class="smallHeaderHeight"{{/if}}>
+    <div id="headerTopLine"></div>
+    <!-- <div id="header-bg-lines-pattern"></div> -->
+
+    <div class="wrapper">            
+        <div id="headerWrap" {{#if showSmallHeaderHeight}}class="smallHeaderHeight"{{/if}}>
+
+            <div id="upperHeadWrap">
+
+                <div id="logoWrap">
+                    <div id="logo">
+                        <a href="#/"><img src="./assets/images/Logo.png" alt="Logo"></a>
+                    </div>
+                    <div id="slogan">Drive safety</div>
+                </div>
+
+                <div id="mobileNavButtonWrap"></div>
+
+                <div id="navWrap">
+                    <ul>
+                        <li><a href="#/home">Home</a></li>
+                        <li><a href="." id="navCheckStatusHref">Check status</a></li>
+                        <li><a href="#/vehicles">Vehicles</a></li>
+                        <li><a href="#/maintenances">Maintenances</a></li>
+                        <li><a href="#/supplies">Supply settings</a></li>
+                    </ul>
+                </div> <!-- end navWrap -->
+
+            </div> <!-- end upperHeadWrap -->
+
+            {{#if showSlider}}
+                <div id="sliderWrap">
+                    <div class="arrow left" id="sliderLeftArrow"><img src="./assets/images/slider-arrow-rigth.png" alt="arrow"></div>
+                    <div id="sliderContent">
+                        <h2 id="sliderMainText">Checking you car status has never been easier</h2>
+                        <h3 id="sliderSecondaryText">“Join today and gift your business with a beautiful online presence”</h3>
+                    </div>
+                    <div class="arrow" id="sliderRightArrow"><img src="./assets/images/slider-arrow-rigth.png" alt="arrow"></div>
+                </div> <!-- end #sliderWrap -->
+
+                <div id="mainDrawing"></div>
+                <div id="mainDrawingMoon"></div>
+                <div id="checkVehicleStatusBigButton">Check vehicle status</div>
+            {{else}}
+                <div id="titleHeaderWrap">
+                    <h1>{{title}}</h1>
+                    <div class="subtitle">{{subTitle}}</div>
+                </div> <!-- titleHeaderWrap -->
+            {{/if}}
+
+        </div> <!-- end #headerWrap -->
+    </div> <!-- end .wrapper -->
+
+    {{#if showSlider}}
+        <div id="mainDrawingBg"></div>
+    {{/if}}
+</header>
+
+{{#if showSlider}}
+    <script src="assets/js/src/web/home-slider.js"></script>
+{{/if}}
+
+{{!-- Slider Pop up --}}
+<div class="fullPagePopUp" id="statusCheckPopUp">
+    <div class="popUpWrap">
+        <div class="closeButton" id="statusCheckPopUpCloseBtn"><img src="./assets/images/close-pop-up-icon.png" alt=""></div>
+        <h3>Check vehicle status</h3>
+
+        <div class="inputBoxWrap">
+            <label for="username">Select vehicle</label>
+            <select id="vehicleStatusVehicleSelect">
+                {{#each vehicles}}
+                    <option value="{{this.id}}" {{#if this.isFirst}}selected{{/if}}>
+                        {{this.displayName}}
+                    </option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="inputBoxWrap">
+            <label for="mileage">Input mileage</label>
+            <input name="mileage" type="number" id="vehicleStatusMileage">
+        </div>
+
+        <div class="actionsWrap">
+            <button class="cancel" id="statusCheckPopUpCloseBtn2">Cancel</button>
+            <button class="submit" id="statusCheckBtn">Check</button>
+        </div>
+    </div>
+</div>
+<script src="assets/js/src/web/check-vehicle-status-pop-up.js"></script>
+
+{{#if showSlider}}
+<script src="assets/js/src/web/home-check-vehicle-status-pop-up.js"></script>
+{{/if}}
