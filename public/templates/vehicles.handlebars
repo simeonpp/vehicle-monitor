@@ -1,0 +1,87 @@
+<section id="breadcrumbsWrap">
+    <div class="wrapper">
+        <ul>
+            {{#each breadcrumbs}}
+                <li>
+                {{#if this.isActive}}
+                    {{this.name}}
+                {{else}}
+                    <a href="{{this.link}}">{{this.name}} »</a>
+                {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</section> <!-- breadcrumbsWrap -->
+
+<div class="wrapper">
+    <div id="mainContent">
+
+        <section id="content">
+            {{#each vehicles}}
+                <article>
+                    <h2>{{this.displayName}}</h2>
+                    <div class="subTitle">Make <span class="bold">{{this.make}}</span>, model <span class="bold">{{this.model}}</span> | {{accountNumber this.mileage}} km</div>
+                    <div class="infoWrap">
+                        <div class="imageWrap"><img src="{{this.imageUrl}}" alt="{{this.displayName}} image"></div>
+                        <div class="textWrap">
+                            {{this.description}}
+                            <div class="buttonWrap"><a href="#/vehicles/{{this.id}}" class="button">Read more</a></div>
+                        </div>
+                    </div>
+                </article>
+            {{/each}}
+
+            <div id="paginationWrap">
+                <div id="pageOfWrap">
+                    Page {{pagination.page}} of {{pagination.totalPages}}
+                </div>
+                <div id="paginationButtonsWrap">
+                    <ul>
+                        {{#times pagination.totalPages}}
+                            <li><a href="#/vehicles?page={{this}}">{{this}}</a></li>
+                        {{/times}}
+                    </ul>
+                </div>
+            </div> <!-- paginationWrap -->
+
+        </section>
+
+        <aside>
+            <section>
+                <h4>Recent maintenances</h4>
+                <ul>
+                    {{#each aside.maintenances}}
+                        <li><a href="#/maintenances/{{this.id}}">{{this.service}} - {{formatShortDate this.dateCreated}}</a></li>
+                    {{/each}}
+                </ul>
+            </section>
+
+            <section>
+                <h4>Supplies</h4>
+                <ul>
+                    {{#each aside.supplies}}
+                        <li><a href="#/supplies#{{this.id}}">{{this.displayName}}</a></li>
+                    {{/each}}
+                </ul>
+            </section>
+
+            <section>
+                <h4>Recent Checks</h4>
+                <ul>
+                    {{#each aside.checks}}
+                        <li>
+                            {{this.displayName}} -
+                            {{#if this.checkStatus}}
+                                Ok
+                            {{else}}
+                                Bad
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            </section>
+        </aside>
+
+    </div> <!-- mainContent -->
+</div> <!-- wrapper -->

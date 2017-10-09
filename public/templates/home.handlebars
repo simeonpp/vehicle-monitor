@@ -1,0 +1,50 @@
+<div class="wrapper">
+    <section id="companyInfo">
+            
+        <article>
+            <h4>What we offer</h4>
+            <div class="infoWrap">
+                <div class="imageWrap"><img src="./assets/images/what-we-offer-icon.png" alt="what we offer icon"></div>
+                We offer to our clients tool for monitoring their vehicles. Having your car checked once in a while is ideal to keep your car in a good driving condition and avoid costly repairs.
+            </div>
+        </article>
+
+        <article>
+            <h4>Who we are</h4>
+            <div class="infoWrap">
+                <div class="imageWrap"><img src="./assets/images/who-we-are-icon.png" alt="who we are icon"></div>
+                We are a start up company that have won a fully fund for your project. We are a team of fifty young and motivate people that wants to keep our customer happy and satisfied as much as possible.
+            </div>
+        </article>
+
+        <article>
+            <h4>Our missions</h4>
+            <div class="infoWrap">
+                <div class="imageWrap"><img src="./assets/images/our-mission-icon.png" alt=""></div>
+                We aim to help our customers to do regular vehicle checks which may lead to establish and avoid problems in advance. We want to improve our customer safety while driving around.
+            </div>
+        </article>
+
+    </section>
+
+    <h2 class="mobile">Supplies</h2>
+    <section id="suppliesWrap">
+        <div class="suppliesWrapDrawing" id="suppliesWrapDrawingLeft"></div>
+        <div class="suppliesWrapDrawing" id="suppliesWrapDrawingRight"></div>
+        <ul id="suppliesList">
+            {{#each supplies}}
+                <li>
+                    <a href="#/supplies#{{this.id}}"><img src="./assets/images/supplies-icon-motor-oi.png" alt="{{this.displayName}}"></a> 
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+</div> <!-- end .wrapper -->
+
+<section id="vehiclesAddWrap">
+    <div id="arrowDrawing"></div>
+    <div class="wrapper">
+        We offer individually supplies settings managments per each of your vehicle
+        <a href="#/supplies" class="button">Read more</a>
+    </div> <!-- end .wrapper -->
+</section>
