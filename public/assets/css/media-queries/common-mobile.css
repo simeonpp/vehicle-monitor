@@ -1,0 +1,165 @@
+@media only screen and (max-width: 680px) {
+    /** Common **/
+    .wrapper {
+        width: 94% !important;
+    }
+    .mobile {
+        display: block;
+    }
+    .button {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    /** End Common **/
+
+    /** Header **/
+    header {
+        height: auto;
+        background: -webkit-linear-gradient(left, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);
+        background: -o-linear-gradient(left, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);
+        background: -ms-linear-gradient(left, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);
+        background: -moz-linear-gradient(left, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);
+        background: linear-gradient(to right, rgb(34, 43, 57) 0%, rgb(39, 48, 63) 80%);        
+    }
+    header #headerWrap {
+        width: 100%;
+        height: auto;
+        background: none;
+    }
+    header #headerWrap #upperHeadWrap {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    header #headerWrap #upperHeadWrap #logoWrap  {
+        width: auto;
+        flex: 1;
+    }
+    header #headerWrap #upperHeadWrap #logoWrap #logo img {
+        height: auto;
+    }
+    header #headerWrap #upperHeadWrap #logoWrap #slogan {
+        margin-left: 10px;
+    }
+    header #headerWrap #upperHeadWrap #mobileNavButtonWrap {
+        display: inline;
+    }
+    header #headerWrap #upperHeadWrap #navWrap {
+        display: none;
+    }
+    header #sliderWrap {
+        display: none;
+    }
+    header #mainDrawing {
+        display: none;
+    }
+    header #mainDrawingBg  {
+        display: none;
+    }
+    header #mainDrawingMoon {
+        display: none;
+    }
+    header #checkVehicleStatusBigButton {
+        position: static;
+        padding: 8px;
+        font-size: 18px;
+        bottom: 0;
+        left: 0;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    /** End Header **/
+
+    /** Homepage Content **/
+    section#companyInfo { 
+        margin-top: 35px;
+        display: block;
+    }
+    section#companyInfo article {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    section#companyInfo article h4 {
+        text-align: center;
+        margin-bottom: 15px;
+        text-decoration: underline;
+    }
+    /** End Homepage Content **/
+
+    /** List & Detailed Content **/
+    #mainContent section#content #filtersWrap {
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid #cccccc;
+        padding-bottom: 20px;
+        margin-bottom: 35px;
+    }
+    #mainContent section#content #filtersWrap #filters {
+        display: block;
+    }
+    #mainContent section#content #filtersWrap #filters select {
+        min-width: 150px;
+        margin-left: 10px;
+        padding: 7px 10px;
+    }
+    #mainContent section#content #filtersWrap #addNewButtonWrap {
+        display: block;
+        margin-top: 15px;
+    }
+
+    #mainContent section#content article {
+        margin-bottom: 55px;
+    }
+    #mainContent section#content article .infoWrap .imageWrap {
+        width: 100%;
+        margin-right: 0;
+        float: none;
+        border: 1px solid #ebeaea;
+    }
+    #mainContent section#content article .infoWrap .textWrap {
+        margin-top: 15px;
+    }
+    #mainContent section#content article .infoWrap .textWrap .tableAdditionalInfo table {
+        width: 100%;
+        margin-top: 30px;
+    }
+    #mainContent section#content article .infoWrap .textWrap .buttonWrap .button {
+        display: block;
+        float: none;
+        width: 100%;
+        text-align: center;
+
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+    #mainContent section#content article#actionButtons {
+        margin-top: 0;
+    }
+
+    .fullPagePopUp .popUpWrap {
+        width: 70%;
+        margin: 35px auto 0;
+        padding: 50px 10% 25px;
+    }
+    /** End List & Detailed Content **/
+
+    /** Footer **/
+    footer #footerOuterWrap {
+        padding: 25px 0;
+    }
+    footer #footerWrap {
+        display: block;
+    }
+    footer #footerWrap article {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    footer #footerWrap article:last-child {
+        margin-bottom: 0;
+    }
+    footer ul.footerList {
+        margin-top: 10px;
+    }
+    /** End Footer **/
+}

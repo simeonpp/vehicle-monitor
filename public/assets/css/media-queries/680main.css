@@ -1,0 +1,18 @@
+@media only screen and (max-width: 680px) and (min-width: 480px) {
+    /** Header **/
+    header #checkVehicleStatusBigButton {
+       width: 250px;
+       margin-left: auto;
+       margin-right: auto;
+   }
+    /** End Header **/
+
+    /** Footer **/
+    footer #footerWrap article:not(:first-child) {
+        text-align: center;
+    }
+    footer ul.footerList {
+       margin-top: 15px !important;
+   }
+    /** End Footer **/
+}
