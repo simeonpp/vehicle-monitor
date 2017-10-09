@@ -1,11 +1,18 @@
 var vehiclesController = function() {
-    const breadcrumbs = [
-        {name: 'Home', link: '#/home', isActive: false},
-        {name: 'Vehicles list', isActive: true}
-    ];
+    const breadcrumbs = {
+        list: [
+            {name: 'Home', link: '#/home', isActive: false},
+            {name: 'Vehicles list', isActive: true}
+        ],
+        detailed: [
+            {name: 'Home', link: '#/home', isActive: false},
+            {name: 'Vehicles list', link: '#/vehicles', isActive: false},
+            {name: 'Vehicle details', isActive: true}
+        ],
+    };
 
     function get(context) {
-        var templateData = { breadcrumbs };
+        var templateData = { breadcrumbs: breadcrumbs.list };
         var page = context.params.page || 1;
 
         generalHelper.setHeaderAndFooter({
@@ -43,10 +50,58 @@ var vehiclesController = function() {
             $('#hb-content').html(template(templateData));
             return Promise.resolve();
         });
-    }
+    };
+
+    function getById(context) {
+        var templateData = { 
+            breadcrumbs: breadcrumbs.detailed,
+            aside: {}
+        };
+        var vehicleId = parseInt(context.params.id);
+
+        return vehiclesData.getById(vehicleId)
+            .then((vehicleDetails) => {
+                templateData.vehicle = vehicleDetails;
+                return maintenancesData.getAll(1, vehicleId, true);
+            })
+            .then((vehicleMaintenances) => {
+                templateData.maintenances = vehicleMaintenances.results;
+                return generalHelper.setHeaderAndFooter({
+                    title: templateData.vehicle.displayName,
+                    subTitle: `Make ${templateData.vehicle.make}, model ${templateData.vehicle.model}, ${templateData.vehicle.mileage} km`
+                })
+            })
+            .then(() => {
+                return cacheData.getMaintenances();
+            })
+            .then((maintenances) => {
+                templateData.aside.maintenances = maintenances;
+                return suppliesData.getAll(6, vehicleId);
+            })
+            .then((supplies) => {
+                templateData.aside.supplies = supplies.results.supplies;
+                return checksData.getAll(6, vehicleId);
+            })
+            .then((checkHistory) => {
+                templateData.aside.checks = checkHistory.map(check => {
+                    if (parseInt(check.checkStatus) === 1) {
+                        check.checkStatus = true;
+                    } else {
+                        check.checkStatus = false;
+                    }
+                    return check;
+                });
+                return templates.get('vehicle-detailed');
+            })
+            .then(function(template) {
+                $('#hb-content').html(template(templateData));
+                return Promise.resolve();
+            });
+    };
 
     return {
-        get: get
+        get,
+        getById
     }
 
 }();

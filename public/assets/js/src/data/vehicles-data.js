@@ -14,8 +14,21 @@ var vehiclesData = function() {
             });
     }
 
+    function getById(vehicleId) {
+        const options = {headers: authenticationHelper.getAuthenticationHeaders()};
+        const vehicleByIdUrl = `${url}/${vehicleId}`;
+        return jsonRequester.get(data.buildUri(vehicleByIdUrl), options)
+            .then(function(vehicleDetails) {
+                return vehicleDetails;
+            })
+            .catch(function(error) {
+                generalHelper.handleError(error);
+            });
+    }
+
     return {
-        getAll
+        getAll,
+        getById
     }
 
 }();

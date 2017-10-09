@@ -25,6 +25,14 @@ var sammyApp = new Sammy('#hb-content', function() {
                 context.redirect('#/login');
             }
         });
+
+        this.get('#/vehicles/:id', function(context) {
+            if (isUserLogged()) {
+                vehiclesController.getById(context);
+            } else {
+                context.redirect('#/login');
+            }
+        });
         
         // this.get(/.*/, function() { 
         //     ...
