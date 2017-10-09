@@ -1,0 +1,150 @@
+<section id="breadcrumbsWrap">
+    <div class="wrapper">
+        <ul>
+            {{#each breadcrumbs}}
+                <li>
+                {{#if this.isActive}}
+                    {{this.name}}
+                {{else}}
+                    <a href="{{this.link}}">{{this.name}} »</a>
+                {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</section> <!-- breadcrumbsWrap -->
+
+<div class="wrapper">
+    <div id="mainContent">
+
+        <section id="content">
+            <div id="filtersWrap">
+                <div id="filters">
+                    Filter by car
+                    <select id="suppliesFilterByVehicleSelect">
+                        <option value="0">All</option>
+                        {{#each aside.vehicles}}
+                            <option value="{{this.id}}" {{#if this.filterByIsActive}}selected{{/if}}>
+                                {{this.displayName}}
+                            </option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div> <!-- filtersWrap -->
+
+            {{#each supplies}}
+                <article>
+                    <h2>{{this.displayName}}</h2>
+                    <div class="infoWrap">
+                        <div class="imageWrap"><img src="{{this.imageUrl}}" alt="{{this.displayName}} image"></div>
+                        <div class="textWrap">
+                            <div class="tableAdditionalInfo">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Default value</th> 
+                                            {{#if this.value.hasSpecificValue}}
+                                                <th>Specific value</th>
+                                            {{/if}}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Quantity</td>
+                                            <td>{{this.value.defaultValue.quantity}}</td> 
+                                            {{#if this.value.hasSpecificValue}}
+                                                <td>{{this.value.specificValue.quantity}}</td> 
+                                            {{/if}}
+                                        </tr>
+                                        <tr>
+                                            <td>Suitable Parts</td>
+                                            <td>-</td> 
+                                            {{#if this.value.hasSpecificValue}}
+                                                <td>{{this.value.specificValue.suitableParts}}</td> 
+                                            {{/if}}
+                                        </tr>
+                                        <tr>
+                                            <td>Price</td>
+                                            <td>{{this.value.defaultValue.price}} BGN</td> 
+                                            {{#if this.value.hasSpecificValue}}
+                                                <td>{{this.value.specificValue.price}} BGN</td>
+                                            {{/if}}
+                                        </tr>
+                                        <tr>
+                                            <td>Km for change</td>
+                                            <td>{{accountNumber this.value.defaultValue.kmForChange}} km</td> 
+                                            {{#if this.value.hasSpecificValue}}
+                                                <td>{{accountNumber this.value.specificValue.kmForChange}} km</td> 
+                                            {{/if}}
+                                        </tr>
+                                        <tr>
+                                            <td>Days for change</td>
+                                            <td>{{this.value.defaultValue.daysForChange}}</td> 
+                                            {{#if this.value.hasSpecificValue}}
+                                                <td>{{this.value.specificValue.daysForChange}}</td>
+                                            {{/if}}
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            {{/each}}
+
+            <div id="paginationWrap">
+                <div id="pageOfWrap">
+                    Page {{pagination.page}} of {{pagination.totalPages}}
+                </div>
+                <div id="paginationButtonsWrap">
+                    <ul>
+                        {{#times pagination.totalPages}}
+                            <li><a href="#/supplies?page={{this}}">{{this}}</a></li>
+                        {{/times}}
+                    </ul>
+                </div>
+            </div> <!-- paginationWrap -->
+
+        </section> <!-- content -->
+
+        <aside>
+            <section>
+                <h4>Recent maintenances</h4>
+                <ul>
+                    {{#each aside.maintenances}}
+                        <li><a href="#/maintenances/{{this.id}}">{{this.service}} - {{formatShortDate this.dateCreated}}</a></li>
+                    {{/each}}
+                </ul>
+            </section>
+
+            <section>
+                <h4>Vehicles</h4>
+                <ul>
+                    {{#each aside.vehicles}}
+                        <li><a href="#/vehicles/{{this.id}}">{{this.displayName}}</a></li>
+                    {{/each}}
+                </ul>
+            </section>
+
+            <section>
+                <h4>Recent Checks</h4>
+                <ul>
+                    {{#each aside.checks}}
+                        <li>
+                            {{this.displayName}}, {{this.mileage}} -
+                            {{#if this.checkStatus}}
+                                Ok
+                            {{else}}
+                                Bad
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            </section>
+        </aside>
+
+    </div> <!-- mainContent -->
+</div> <!-- wrapper -->
+
+<script src="assets/js/src/web/supplies-filters.js"></script>

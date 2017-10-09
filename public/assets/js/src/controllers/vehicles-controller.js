@@ -20,7 +20,7 @@ var vehiclesController = function() {
             subTitle: 'Keep your vehicles in good driving conditions'
         })
         .then(() => {
-            return vehiclesData.getAll(2, page)
+            return vehiclesData.getAll(5, page)
         })
         .then((vehiclesResult) => {
             templateData.vehicles = vehiclesResult.results;
@@ -36,14 +36,7 @@ var vehiclesController = function() {
             return cacheData.getCheckHistory();  
         })
         .then(function(checks) {
-            templateData.aside.checks = checks.map(check => {
-                if (parseInt(check.checkStatus) === 1) {
-                    check.checkStatus = true;
-                } else {
-                    check.checkStatus = false;
-                }
-                return check;
-            });
+            templateData.aside.checks = checks;
             return templates.get('vehicles');
         })
         .then(function(template) {
@@ -62,35 +55,28 @@ var vehiclesController = function() {
         return vehiclesData.getById(vehicleId)
             .then((vehicleDetails) => {
                 templateData.vehicle = vehicleDetails;
-                return maintenancesData.getAll(1, vehicleId, true);
+                return maintenancesData.getAll(1, 1, vehicleId, true);
             })
             .then((vehicleMaintenances) => {
                 templateData.maintenances = vehicleMaintenances.results;
                 return generalHelper.setHeaderAndFooter({
                     title: templateData.vehicle.displayName,
                     subTitle: `Make ${templateData.vehicle.make}, model ${templateData.vehicle.model}, ${templateData.vehicle.mileage} km`
-                })
+                });
             })
             .then(() => {
                 return cacheData.getMaintenances();
             })
             .then((maintenances) => {
                 templateData.aside.maintenances = maintenances;
-                return suppliesData.getAll(6, vehicleId);
+                return suppliesData.getAll(6, 1, vehicleId);
             })
             .then((supplies) => {
                 templateData.aside.supplies = supplies.results.supplies;
                 return checksData.getAll(6, vehicleId);
             })
             .then((checkHistory) => {
-                templateData.aside.checks = checkHistory.map(check => {
-                    if (parseInt(check.checkStatus) === 1) {
-                        check.checkStatus = true;
-                    } else {
-                        check.checkStatus = false;
-                    }
-                    return check;
-                });
+                templateData.aside.checks = checkHistory;
                 return templates.get('vehicle-detailed');
             })
             .then(function(template) {

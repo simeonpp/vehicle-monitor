@@ -61,7 +61,7 @@
                 <h4>Supplies</h4>
                 <ul>
                     {{#each aside.supplies}}
-                        <li><a href="#/supplies#{{this.id}}">{{this.displayName}}</a></li>
+                        <li><a href="#/supplies">{{this.displayName}}</a></li>
                     {{/each}}
                 </ul>
             </section>
@@ -71,7 +71,7 @@
                 <ul>
                     {{#each aside.checks}}
                         <li>
-                            {{this.displayName}} -
+                            {{this.displayName}}, {{this.mileage}} -
                             {{#if this.checkStatus}}
                                 Ok
                             {{else}}

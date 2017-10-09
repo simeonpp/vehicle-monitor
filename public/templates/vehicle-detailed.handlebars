@@ -34,7 +34,7 @@
                 </ul>
             </article>
 
-            <article id="vehicleDetails">
+            <article class="listDetails">
                 <ul>
                     <li>Mileage: {{accountNumber vehicle.mileage}}</li>
                     <li>Make: {{vehicle.make}}</li>
@@ -96,7 +96,7 @@
                 <ul>
                     {{#each aside.checks}}
                         <li>
-                            {{this.displayName}} -
+                            {{this.displayName}}, {{this.mileage}} -
                             {{#if this.checkStatus}}
                                 Ok
                             {{else}}

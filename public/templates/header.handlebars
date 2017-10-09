@@ -68,22 +68,27 @@
 
         <div class="inputBoxWrap">
             <label for="username">Select vehicle</label>
-            <select>
-                <option value="1">Peugeot 407</option>
-                <option value="2">Mercedez-benz</option>
+            <select id="vehicleStatusVehicleSelect">
+                {{#each vehicles}}
+                    <option value="{{this.id}}" {{#if this.isFirst}}selected{{/if}}>
+                        {{this.displayName}}
+                    </option>
+                {{/each}}
             </select>
         </div>
         <div class="inputBoxWrap">
-            <label for="username">Input mileage</label>
-            <input type="number">
+            <label for="mileage">Input mileage</label>
+            <input name="mileage" type="number" id="vehicleStatusMileage">
         </div>
 
         <div class="actionsWrap">
             <button class="cancel" id="statusCheckPopUpCloseBtn2">Cancel</button>
-            <button class="submit">Check</button>
+            <button class="submit" id="statusCheckBtn">Check</button>
         </div>
     </div>
 </div>
+<script src="assets/js/src/web/check-vehicle-status-pop-up.js"></script>
+
 {{#if showSlider}}
 <script src="assets/js/src/web/home-check-vehicle-status-pop-up.js"></script>
 {{/if}}

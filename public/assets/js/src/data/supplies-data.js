@@ -1,9 +1,9 @@
 var suppliesData = function() {
     var url = '/api/supplies.php';
 
-    function getAll(pageSize = 10, vehicleId) {
+    function getAll(pageSize = 10, page = 1, vehicleId) {
         var options = {headers: authenticationHelper.getAuthenticationHeaders()};
-        var pageSizedUrl = url + '?pageSize=' + pageSize;
+        let pageSizedUrl = `${url}?pageSize=${pageSize}&page=${page}`;
         if (vehicleId) {
             pageSizedUrl += `&vehicleId=${vehicleId}`;
         }
