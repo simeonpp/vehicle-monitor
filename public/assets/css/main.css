@@ -583,10 +583,10 @@ section#breadcrumbsWrap ul li a {
 #mainContent section#content article#actionButtons {
     margin-top: 20px;
 }
-#mainContent section#content article#vehicleDetails {
+#mainContent section#content article.listDetails {
     margin-top: 20px;
 }
-#mainContent section#content article#vehicleDetails ul li {
+#mainContent section#content article.listDetails ul li {
     margin-top: 10px;
 }
 #mainContent section#content article.extraInfoWrap {
@@ -646,7 +646,7 @@ section#breadcrumbsWrap ul li a {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 
-    border-left: 5px solid red;
+    border-left: 1px solid #c5c5c5;
     /* border-image: url('../images/aside-border-pattern.png') 30 30 stretch;
     border-image-source: url('../images/aside-border-pattern.png');
 
@@ -726,6 +726,66 @@ section#breadcrumbsWrap ul li a {
 .tableAdditionalInfo table tbody tr:nth-child(2n) {
     background: #f7f7f7;
 }
+
+/** Status check page **/
+section#statusCheckWrap {
+    width: 100%;
+    margin-bottom: 40px;
+}
+section#statusCheckWrap h3 {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+section#statusCheckWrap #statusIconWrap {
+    text-align: center;
+    margin: 35px 0;
+}
+section#statusCheckWrap #statusIconWrap img {
+    width: 350px;
+    max-width: 200px;
+}
+section#statusCheckWrap h4 {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+section#statusCheckWrap .tableAdditionalInfo {
+    width: 100%;
+}
+section#statusCheckWrap .tableAdditionalInfo table {
+    width: 100%;
+}
+section#statusCheckWrap .tableAdditionalInfo table th {
+    padding: 25px 10px;
+    background: #5f5dac;
+    width: 20%;
+}
+section#statusCheckWrap .tableAdditionalInfo table td {
+    padding: 15px 10px;
+    text-align: center;
+}
+section#statusCheckWrap .tableAdditionalInfo table td:first-child {
+    text-align: left;
+}
+section#statusCheckWrap .tableAdditionalInfo table tr {
+    background: white;
+    border-bottom: 1px solid #cccccc;
+    color: #4b4b4b;
+    font-weight: bold;
+}
+section#statusCheckWrap .tableAdditionalInfo table tr.statusWarning {
+    background: #ffd484 !important;
+}
+section#statusCheckWrap .tableAdditionalInfo table tr.statusBad {
+    background: #ffa393 !important;
+}
+section#statusCheckWrap .tableAdditionalInfo table tr:nth-child(2n) {
+    background: #efefef;
+}
+/** end Status check page **/
 
 /** Pop ups **/
 .fullPagePopUp {
