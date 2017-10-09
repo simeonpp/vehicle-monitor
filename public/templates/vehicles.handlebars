@@ -20,10 +20,14 @@
         <section id="content">
             {{#each vehicles}}
                 <article>
-                    <h2>{{this.displayName}}</h2>
+                    <h2><a href="#/vehicles/{{this.id}}">{{this.displayName}}</a></h2>
                     <div class="subTitle">Make <span class="bold">{{this.make}}</span>, model <span class="bold">{{this.model}}</span> | {{accountNumber this.mileage}} km</div>
                     <div class="infoWrap">
-                        <div class="imageWrap"><img src="{{this.imageUrl}}" alt="{{this.displayName}} image"></div>
+                        <div class="imageWrap">
+                            <a href="#/vehicles/{{this.id}}">
+                                <img src="{{this.imageUrl}}" alt="{{this.displayName}} image">
+                            </a>
+                        </div>
                         <div class="textWrap">
                             {{this.description}}
                             <div class="buttonWrap"><a href="#/vehicles/{{this.id}}" class="button">Read more</a></div>
