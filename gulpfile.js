@@ -135,6 +135,6 @@ gulp.task('default', [
     'handle-image',
     'handle-js'
 ], () => {
-    return gulp.src(tempDirectory, {read: false})
+    return gulp.src([tempDirectory, 'public/asd'], {read: false})
         .pipe(clean()); // remove temp folder
 });
