@@ -60,7 +60,7 @@
     <script src="dist/scripts/home-slider.js"></script>
 {{/if}}
 
-{{!-- Slider Pop up --}}
+{{!-- Status check Pop up --}}
 <div class="fullPagePopUp" id="statusCheckPopUp">
     <div class="popUpWrap">
         <div class="closeButton" id="statusCheckPopUpCloseBtn"><img src="./assets/images/close-pop-up-icon.png" alt=""></div>
@@ -88,6 +88,26 @@
     </div>
 </div>
 <script src="dist/scripts/check-vehicle-status-pop-up.js"></script>
+
+{{!-- For navigation --}}
+<script src="dist/scripts/check-status-nav-pop-up.js"></script>
+
+{{!-- Mobile navigation Pop up --}}
+<div class="fullPagePopUp" id="mobileNavWrap">
+    <div class="popUpWrap">
+        <div class="closeButton" id="mobileNavPopUpCloseBtn"><img src="./assets/images/close-pop-up-icon.png" alt=""></div>
+        <h3>Navigation</h3>
+
+        <ul id="mobileNavUlWrap">
+            <li><a href="#/home">Home</a></li>
+            <li><a href="." id="mobileNavCheckStatusHref">Check status</a></li>
+            <li><a href="#/vehicles">Vehicles</a></li>
+            <li><a href="#/maintenances">Maintenances</a></li>
+            <li><a href="#/supplies">Supply settings</a></li>
+        </ul>
+    </div>
+</div>
+<script src="dist/scripts/mobile-nav-pop-up.js"></script>
 
 {{#if showSlider}}
 <script src="dist/scripts/home-check-vehicle-status-pop-up.js"></script>

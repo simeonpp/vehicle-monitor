@@ -274,9 +274,12 @@ header #headerWrap #upperHeadWrap #logoWrap #slogan {
 header #headerWrap #upperHeadWrap #mobileNavButtonWrap {
     width: 40px;
     height: 40px;
-    background: yellow;
+    background-image: url('./images/mobile-nav-icon.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
     flex-basis: 40px;
     display: none;
+    cursor: pointer;
 }
 header #headerWrap #upperHeadWrap #navWrap {
     margin-top: 2px;
@@ -869,6 +872,36 @@ section#statusCheckWrap .tableAdditionalInfo table tr:nth-child(2n) {
 }
 .fullPagePopUp .popUpWrap .actionsWrap .submit:hover {
     background: #8ec6c4;
+}
+
+#mobileNavWrap {
+}
+
+#mobileNavWrap .popUpWrap {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+#mobileNavWrap .popUpWrap #mobileNavUlWrap {
+    margin-top: 35px;
+}
+#mobileNavWrap .popUpWrap #mobileNavUlWrap li a {
+    width: 100%;
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+    color: #758b8d;
+    font-weight: bold;
+    text-decoration: none;
+    border-top: 1px solid #27303f;
+}
+#mobileNavWrap .popUpWrap #mobileNavUlWrap li:last-child a {
+    border-bottom: 1px solid #27303f;
 }
 /** End Pop ups **/
 
