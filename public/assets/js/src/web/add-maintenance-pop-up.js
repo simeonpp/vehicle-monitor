@@ -101,6 +101,6 @@ document.addEventListener('click',function(e){
     jsonRequester.post(addMaintenanceUri, options)
         .then(function(checkStatus) {
             closeAddMaintenancePopUp();
-            window.location.href = '#/maintenances';
+            window.location.href = '#/home';
         });
  });
