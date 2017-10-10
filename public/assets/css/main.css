@@ -821,6 +821,9 @@ section#statusCheckWrap .tableAdditionalInfo table tr:nth-child(2n) {
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
+.overflowY {
+    overflow-y: scroll;
+}
 .fullPagePopUp .popUpWrap .closeButton {
     width: 45px;
     height: 35px;
@@ -907,13 +910,31 @@ section#statusCheckWrap .tableAdditionalInfo table tr:nth-child(2n) {
 /** End Pop ups **/
 
 /** Check status pop up **/
-#statusCheckPopUp h3 {
+#fullPagePopUp h3 {
     margin-bottom: 40px;
 }
-#statusCheckPopUp label {
+#fullPagePopUp label {
     font-size: 18px;
 }
+.fullPagePopUp textarea {
+    width: 100%;
+}
 /** End Check status pop up **/
+
+/** Add maintenance pop up **/
+.fullPagePopUp .addMaintenanceVehicleWrap {
+    margin: 20px 0;
+    padding: 15px 10px;
+    background: #e8e8e8;
+}
+.fullPagePopUp .actionButton {
+    border: 1px solid #cccccc;
+    color: #8c8a8a;
+    background: white;padding: 5px 10px;
+    cursor: pointer;
+    display: inline;
+}
+/** End add maitenance pop up **/
 
 footer #footerOuterWrap {
     width: 100%;

@@ -37,6 +37,7 @@ var maintenancesController = function() {
         })
         .then(function(supplies) {
             templateData.aside.supplies = supplies.supplies;
+            templateData.aside.stringifySupplies = JSON.stringify(templateData.aside.supplies);
             return cacheData.getVehicles();
         })
         .then((vehicles) => {

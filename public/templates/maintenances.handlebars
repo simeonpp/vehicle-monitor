@@ -31,7 +31,7 @@
                     </select>
                 </div>
                 <div id="addNewButtonWrap">
-                    <div class="button">Add new</div>
+                    <div class="button" id="addNewMaintenanceButton">Add new 2</div>
                 </div>
             </div> <!-- filtersWrap -->
 
@@ -104,4 +104,46 @@
     </div> <!-- mainContent -->
 </div> <!-- wrapper -->
 
+<div class="fullPagePopUp" id="addMaintenancePopUp">
+    <div class="popUpWrap overflowY">
+        <div class="closeButton" id="addMaintenancePopUpCloseBtn"><img src="./assets/images/close-pop-up-icon.png" alt=""></div>
+        <h3>Add maintenance</h3>
+
+        <div class="inputBoxWrap">
+            <label for="vehicleId">Select vehicle</label>
+            <select name="vehicleId" id="addMaintenanceVehicleSelect">
+                {{#each aside.vehicles}}
+                    <option value="{{this.id}}">{{this.displayName}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="inputBoxWrap">
+            <label for="price">Input price</label>
+            <input name="price" type="number" id="addMaintenancePrice">
+        </div>
+        <div class="inputBoxWrap">
+            <label for="mileage">Input mileage</label>
+            <input name="mileage" type="number" id="addMaintenanceMileage">
+        </div>
+        <div class="inputBoxWrap">
+            <label for="service">Input service</label>
+            <input name="service" type="text" id="addMaintenanceService">
+        </div>
+        <div class="inputBoxWrap">
+            <label for="service">Description</label>
+            <textarea rows="4" id="addMaintenanceDescription"></textarea>
+        </div>
+
+        <div id="addMaintenanceDivToAppend"></div>
+
+        <div id="addMaintenanceAddSupplyBtn" class="actionButton">Add supply</div>
+
+        <div class="actionsWrap">
+            <button class="submit" id="addMaintenanceSubmitButton">Add</button>
+        </div>
+    </div>
+</div>
+
+<div data-supplies="{{aside.stringifySupplies}}" id="suppliesData"></div>
 <script src="dist/scripts/maintenances-filters.js"></script>
+<script src="assets/js/src/web/add-maintenance-pop-up.js"></script>
