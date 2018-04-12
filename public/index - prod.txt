@@ -1,0 +1,8 @@
+<!-- styles -->
+    <link rel="stylesheet" type="text/css" href="dist/styles/bundle.css">
+
+    <!-- libs -->
+    <script src="dist/scripts/bundle-libs.js"></script>
+
+    <!-- app -->
+    <script src="dist/scripts/bundle.js"></script>

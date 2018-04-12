@@ -1,0 +1,56 @@
+<!-- styles -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/media-queries/320main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/media-queries/480main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/media-queries/680main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/media-queries/768main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/media-queries/950main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/media-queries/common-mobile.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/media-queries/common.css">
+
+    <!-- libs -->
+    <script src="assets/js/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/js/libs/sammy/lib/sammy.js"></script>
+    <script src="assets/js/libs/handlebars/handlebars.js"></script>
+    <script src="assets/js/libs/jquery-ui/jquery-ui.min.js"></script>
+    <script src="assets/js/libs/underscore/underscore-min.js"></script>
+
+    <!-- app helpers -->
+    <script src="assets/js/src/helpers/general-helper.js"></script>
+    <script src="assets/js/src/helpers/authentication-helper.js"></script>
+
+    <!-- app data -->
+    <script src="assets/js/src/data/index.js"></script>
+    <script src="assets/js/src/data/vehicles-data.js"></script>
+    <script src="assets/js/src/data/maintenances-data.js"></script>
+    <script src="assets/js/src/data/supplies-data.js"></script>
+    <script src="assets/js/src/data/checks-data.js"></script>
+    <script src="assets/js/src/data/cache-data.js"></script>
+
+    <!-- app controllers -->
+    <script src="assets/js/src/controllers/login-controller.js"></script>
+    <script src="assets/js/src/controllers/home-controller.js"></script>
+    <script src="assets/js/src/controllers/header-controller.js"></script>
+    <script src="assets/js/src/controllers/footer-controller.js"></script>
+    <script src="assets/js/src/controllers/vehicles-controller.js"></script>
+    <script src="assets/js/src/controllers/maintenances-controller.js"></script>
+    <script src="assets/js/src/controllers/supplies-controller.js"></script>
+    <script src="assets/js/src/controllers/check-status-controller.js"></script>
+    
+    <!-- app -->
+    <script src="assets/js/src/templates.js"></script>
+    <script src="assets/js/src/json-requester.js"></script>
+    <script src="assets/js/src/routing.js"></script>
+    <script src="assets/js/src/init.js"></script>
+
+
+
+
+
+
+
+
+
+
